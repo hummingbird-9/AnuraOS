@@ -49,37 +49,26 @@ workbox.routing.registerRoute(
 		} else {
 			try {
 				const fetchResponse = await fetch(event.request);
-				// Promise so that we can return the response before we cache it, for faster response times
-				return new Promise(async (resolve) => {
-					const corsResponse = new Response(
-						await fetchResponse.clone().arrayBuffer(),
-						{
-							headers: {
-								...Object.fromEntries(fetchResponse.headers.entries()),
-								...corsheaders,
-							},
-						},
-					);
+			const responseBuffer = await fetchResponse.clone().arrayBuffer();
+			const corsResponse = new Response(responseBuffer, {
+				headers: {
+					...Object.fromEntries(fetchResponse.headers.entries()),
+					...corsheaders,
+				},
+			});
 
-					resolve(corsResponse);
-
-					if (fetchResponse.ok) {
-						const buffer = await fetchResponse.clone().arrayBuffer();
-						await sh.promises.mkdirp(
-							`${basepath}${path.replace(/[^/]*$/g, "")}`,
-						);
-						// Explicitly use Filer's fs here, as
-						// Buffers lose their inheritance when passed
-						// to anura's fs, causing them to be treated as
-						// strings
-						await fs.promises.writeFile(
-							`${basepath}${path}`,
-							Buffer.from(buffer),
-						);
-					}
-				}).catch((e) => {
-					console.error("I hate this bug: ", e);
+			// Cache in the background. A failed cache write must never make a
+			// successful network response turn into an invalid service-worker response.
+			if (fetchResponse.ok) {
+				void (async () => {
+					await sh.promises.mkdirp(`${basepath}${path.replace(/[^/]*$/g, "")}`);
+					const buffer = await fetchResponse.clone().arrayBuffer();
+					await fs.promises.writeFile(`${basepath}${path}`, Buffer.from(buffer));
+				})().catch((error) => {
+					console.warn("Unable to cache fetched resource:", path, error);
 				});
+			}
+			return corsResponse;
 			} catch (e) {
 				return new Response(
 					JSON.stringify({
