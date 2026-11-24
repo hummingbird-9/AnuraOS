@@ -238,7 +238,7 @@ class ExploreApp extends App {
 	welcome = (
 		<div id="body">
 			<div class="head">
-				<img src="/icon.png" alt="AnuraOS Logo" />
+				<img src="/AnuraOS/icon.png" alt="AnuraOS Logo" />
 				<h1>Welcome to AnuraOS!</h1>
 			</div>
 			<h2>What is AnuraOS?</h2>
