@@ -79,7 +79,9 @@ class Settings {
 		const savedWisp = initial["wisp-url"];
 		const savedWispHost =
 			typeof savedWisp === "string"
-				? savedWisp.replace(/^[a-z][a-z0-9+.-]*:\/\//i, "").split(/[/:?#]/, 1)[0]
+				? savedWisp
+						.replace(/^[a-z][a-z0-9+.-]*:\/\//i, "")
+						.split(/[/:?#]/, 1)[0]
 				: "";
 		let isLegacyWisp = initial["wisp-url"] === pageOriginWisp;
 		isLegacyWisp ||= savedWispHost === "relay.widgetry.org";
