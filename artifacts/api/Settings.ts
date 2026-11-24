@@ -72,14 +72,21 @@ class Settings {
 			fs.writeFile("/anura_settings.json", JSON.stringify(initial));
 		}
 
-
 		const pageOriginWisp =
 			(location.protocol === "https:" ? "wss://" : "ws://") +
 			window.location.host +
 			"/";
+		const savedWisp = initial["wisp-url"];
+		const savedWispHost =
+			typeof savedWisp === "string"
+				? savedWisp.replace(/^[a-z][a-z0-9+.-]*:\/\//i, "").split(/[/:?#]/, 1)[0]
+				: "";
+		let isLegacyWisp = initial["wisp-url"] === pageOriginWisp;
+		isLegacyWisp ||= savedWispHost === "relay.widgetry.org";
+		isLegacyWisp ||= savedWispHost === window.location.hostname;
 		if (
 			configuredWispUrl &&
-			initial["wisp-url"] === pageOriginWisp &&
+			isLegacyWisp &&
 			initial["wisp-url"] !== configuredWispUrl
 		) {
 			initial["wisp-url"] = configuredWispUrl;

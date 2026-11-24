@@ -542,7 +542,7 @@ body.blur-disable .custom-menu {
 	width: 128px;
 }
 .aboutapp-logo-img:hover {
-	background: url(/assets/images/weeknd.gif);
+	background: url(AnuraOS/assets/images/weeknd.gif);
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 128px;

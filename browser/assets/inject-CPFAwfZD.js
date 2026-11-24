@@ -14564,7 +14564,7 @@ __nested_webpack_require_669413__.d(__nested_webpack_exports__, {
 const versionInfo = {
     version: "2.0.67-alpha.2",
     build: "365ef18f",
-    date: "2026-11-23T23:18:16.342Z"
+    date: "2026-11-24T05:54:05.205Z"
 };
 const defaultConfig = {
     globals: {
