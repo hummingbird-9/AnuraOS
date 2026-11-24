@@ -1,9 +1,10 @@
 /* global workbox, bootStrapFSReady, idbKeyval, cacheenabled, opfs, filerfs, opfssh, filersh, serveFile, corsheaders */
 
 workbox.routing.registerRoute(
-	/^(?!.*(\/config.json|\/MILESTONE|\/COMMIT|\/x86images\/))/,
+	({ url }) =>
+		url.origin === self.location.origin &&
+		!/(\/config\.json|\/MILESTONE|\/COMMIT|\/x86images\/)/.test(url.pathname),
 	async (event) => {
-		if (new URL(event.url).origin !== self.location.origin) return false;
 		await bootStrapFSReady;
 		if (cacheenabled === undefined) {
 			console.debug("retrieving cache value");
