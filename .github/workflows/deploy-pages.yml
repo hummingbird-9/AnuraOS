@@ -44,7 +44,9 @@ jobs:
 
       - name: Set up Anura's Rust toolchain
         run: |
-          rustup toolchain install nightly --profile minimal --target wasm32-unknown-unknown,i686-unknown-linux-gnu
+          rustup toolchain install nightly --profile minimal --component rust-src --target wasm32-unknown-unknown,i686-unknown-linux-gnu
+          rustup component add rust-src --toolchain nightly
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
           rustup default nightly
 
       - name: Install Anura build tools
