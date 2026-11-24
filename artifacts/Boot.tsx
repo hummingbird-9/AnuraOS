@@ -180,23 +180,50 @@ window.addEventListener("load", async () => {
 		if (event.data?.anura_target === "anura.sw.reinit") initComlink(true);
 	});
 
-	await navigator.serviceWorker.register("/AnuraOS/anura-sw.js", { scope: appBasePath });
-	// The first visit is not controlled until the newly installed worker calls clients.claim().
-	if (!navigator.serviceWorker.controller) {
-		await new Promise<void>((resolve) => {
-			const timeout = window.setTimeout(resolve, 10000);
-			navigator.serviceWorker.addEventListener(
-				"controllerchange",
-				() => {
-					window.clearTimeout(timeout);
-					resolve();
-				},
-				{ once: true },
-			);
+	const registration = await navigator.serviceWorker.register("/AnuraOS/anura-sw.js", { scope: appBasePath });
+
+	// Ask the active worker to claim this page explicitly. This handles the case
+	// where the worker activated before the redirected /AnuraOS/ document existed.
+	const waitForController = (timeoutMs: number) =>
+		new Promise<boolean>((resolve) => {
+			if (navigator.serviceWorker.controller) return resolve(true);
+			let finished = false;
+			const finish = () => {
+				if (finished) return;
+				finished = true;
+				navigator.serviceWorker.removeEventListener("controllerchange", onChange);
+				window.clearTimeout(timeout);
+				resolve(!!navigator.serviceWorker.controller);
+			};
+			const onChange = () => finish();
+			const timeout = window.setTimeout(finish, timeoutMs);
+			navigator.serviceWorker.addEventListener("controllerchange", onChange);
 		});
+	if (!navigator.serviceWorker.controller) {
+		const worker = registration.active || registration.waiting || registration.installing;
+		if (worker) worker.postMessage({ anura_target: "anura.sw.claim" });
+		await waitForController(10000);
 	}
-	if (navigator.serviceWorker.controller) initComlink();
-	else console.warn("Anura service worker did not take control before boot continued.");
+	if (!navigator.serviceWorker.controller) {
+		// Reload once after activation so the next navigation is eligible for
+		// control by the already-active worker. Never enter a reload loop.
+		const retryKey = "anura-sw-control-reload";
+		if (!sessionStorage.getItem(retryKey) && registration.active) {
+			sessionStorage.setItem(retryKey, "1");
+			window.location.reload();
+			return;
+		}
+		console.error("Anura service worker is active but still does not control this page.", {
+			scope: registration.scope,
+			activeScript: registration.active?.scriptURL,
+			activeState: registration.active?.state,
+			page: window.location.href,
+		});
+	} else {
+		sessionStorage.removeItem("anura-sw-control-reload");
+		initComlink();
+	}
+
 
 	// Create "Process" that controls the service worker
 
