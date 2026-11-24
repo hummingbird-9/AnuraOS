@@ -149,8 +149,13 @@ async function InitV86Hdd(): Promise<FakeFile> {
 			}
 		},
 		save: async (emulator = anura.x86?.emulator) => {
+			const blockCache = (emulator as any)?.disk_images?.hda?.block_cache;
+			if (!blockCache) {
+				console.debug("Skipping x86 disk save until the v86 disk cache is ready.");
+				return;
+			}
 			const part_cache: any = {};
-			for (const [offset, buffer] of emulator.disk_images.hda.block_cache) {
+			for (const [offset, buffer] of blockCache) {
 				const start = offset * BUF_SIZE;
 				const starti = Math.floor(start / SLICE_SIZE);
 				let i = starti;
@@ -284,8 +289,8 @@ class V86Backend {
 				"rw init=/sbin/init root=/dev/sda rootfstype=ext4 random.trust_cpu=on 8250.nr_uarts=10 spectre_v2=off pti=off mitigations=off ipv6.disable=1",
 			filesystem: { fs, sh, Path, Buffer },
 
-			bios: { url: "/bios/seabios.bin" },
-			vga_bios: { url: "/bios/vgabios.bin" },
+			bios: { url: "/AnuraOS/bios/seabios.bin" },
+			vga_bios: { url: "/AnuraOS/bios/vgabios.bin" },
 			net_device: {
 				relay_url: anura.wsproxyURL
 					.replace("ws://", "wisp://")
