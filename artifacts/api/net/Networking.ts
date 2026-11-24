@@ -9,9 +9,18 @@ class Networking {
 	WebSocket: typeof WebSocket;
 	Socket: any;
 	TLSSocket: any;
+	private wispServer: string;
+	private upstream: WebSocket;
+	private reconnectTimer: number | undefined;
+	private reconnectingSocket: WebSocket | undefined;
+	private reconnectDelay = 1000;
 
 	constructor(wisp_server: string) {
-		this.bus = new WispBus(new WebSocket(wisp_server));
+		this.wispServer = wisp_server;
+		const upstream = new WebSocket(wisp_server);
+		this.upstream = upstream;
+		this.bus = new WispBus(upstream);
+		this.watchUpstream(upstream);
 
 		//@ts-ignore
 		import(this.libcurl_src).then(async (m) => {
@@ -31,6 +40,96 @@ class Networking {
 			console.debug("libcurl.js ready!");
 		});
 	}
+	private watchUpstream(socket: WebSocket, alreadyHandshaken = false) {
+		let handshaken = alreadyHandshaken;
+		let handshakeTimer: number | undefined;
+		if (!handshaken) {
+			handshakeTimer = window.setTimeout(() => {
+				if (!handshaken && this.upstream === socket &&
+					socket.readyState !== WebSocket.CLOSED &&
+					socket.readyState !== WebSocket.CLOSING) {
+					console.warn("Wisp upstream handshake timed out; reconnecting.");
+					socket.close();
+				}
+			}, 10000);
+		}
+		socket.addEventListener("message", (event: MessageEvent) => {
+			if (handshaken || !(event.data instanceof ArrayBuffer)) return;
+			const bytes = new Uint8Array(event.data);
+			if (bytes.byteLength < 9 || bytes[0] !== 3) return;
+			const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+			if (view.getUint32(1, true) !== 0) return;
+			handshaken = true;
+			if (handshakeTimer !== undefined) window.clearTimeout(handshakeTimer);
+			this.bus.upstreamBuffer = view.getUint32(5, true);
+		});
+		socket.addEventListener("close", () => {
+			if (handshakeTimer !== undefined) window.clearTimeout(handshakeTimer);
+			if (this.upstream === socket) this.scheduleReconnect();
+		});
+		socket.addEventListener("error", () => {
+			if (this.upstream === socket && socket.readyState === WebSocket.CLOSED) this.scheduleReconnect();
+		});
+	}
+	private scheduleReconnect() {
+		if (this.reconnectTimer !== undefined || this.reconnectingSocket) return;
+		const delay = this.reconnectDelay;
+		this.reconnectDelay = Math.min(this.reconnectDelay * 2, 30000);
+		console.warn(`Wisp upstream disconnected; retrying in ${delay}ms.`);
+		this.reconnectTimer = window.setTimeout(() => {
+			this.reconnectTimer = undefined;
+			this.reconnectUpstream();
+		}, delay);
+	}
+	private reconnectUpstream() {
+		if (this.upstream.readyState === WebSocket.OPEN || this.upstream.readyState === WebSocket.CONNECTING) return;
+		let socket: WebSocket;
+		try { socket = new WebSocket(this.wispServer); }
+		catch (error) {
+			console.warn("Unable to create Wisp reconnect socket.", error);
+			this.scheduleReconnect();
+			return;
+		}
+		socket.binaryType = "arraybuffer";
+		this.reconnectingSocket = socket;
+		let finished = false;
+		let timeout: number;
+		const cleanup = () => {
+			window.clearTimeout(timeout);
+			socket.removeEventListener("message", onMessage);
+			socket.removeEventListener("error", retry);
+			socket.removeEventListener("close", retry);
+		};
+		const retry = () => {
+			if (finished) return;
+			finished = true;
+			cleanup();
+			if (this.reconnectingSocket === socket) this.reconnectingSocket = undefined;
+			if (socket.readyState === WebSocket.CONNECTING || socket.readyState === WebSocket.OPEN) socket.close();
+			this.scheduleReconnect();
+		};
+		const onMessage = (event: MessageEvent) => {
+			if (!(event.data instanceof ArrayBuffer)) return;
+			const bytes = new Uint8Array(event.data);
+			if (bytes.byteLength < 9 || bytes[0] !== 3) return;
+			const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+			if (view.getUint32(1, true) !== 0) return;
+			finished = true;
+			cleanup();
+			this.bus.upstreamBuffer = view.getUint32(5, true);
+			this.bus.setUpstreamProvider(socket);
+			this.upstream = socket;
+			this.reconnectingSocket = undefined;
+			this.reconnectDelay = 1000;
+			this.watchUpstream(socket, true);
+			console.info("Wisp upstream reconnected.");
+		};
+		timeout = window.setTimeout(retry, 10000);
+		socket.addEventListener("message", onMessage);
+		socket.addEventListener("error", retry);
+		socket.addEventListener("close", retry);
+	}
+
 	loopback = {
 		addressMap: new Map(),
 		call: async (port: number, request: Request) => {
