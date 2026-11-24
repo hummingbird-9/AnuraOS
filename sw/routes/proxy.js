@@ -25,7 +25,13 @@ for (const method of methods) {
 				}
 				const response = await $scramjetController.route(event);
 				if (response instanceof Response) {
-					console.warn("[Anura proxy] returned", response.status, url.href);
+					const csp = response.headers.get("content-security-policy");
+					console.warn("[Anura proxy] returned", response.status, url.href, {
+						contentType: response.headers.get("content-type"),
+						xFrameOptions: response.headers.get("x-frame-options"),
+						contentSecurityPolicy: csp ? csp.slice(0, 500) : null,
+						location: response.headers.get("location"),
+					});
 					return response;
 				}
 				console.error("[Anura proxy] Scramjet returned no Response for", url.href);
