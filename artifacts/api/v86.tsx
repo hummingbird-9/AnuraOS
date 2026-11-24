@@ -273,10 +273,10 @@ class V86Backend {
 			vga_memory_size: 8 * 1024 * 1024,
 			screen_container: this.screen_container,
 			initrd: {
-				url: "/fs/boot/initrd.img",
+				url: "/AnuraOS/fs/boot/initrd.img",
 			},
 			bzimage: {
-				url: "/fs/boot/bzimage",
+				url: "/AnuraOS/fs/boot/bzimage",
 				async: false,
 			},
 

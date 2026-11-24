@@ -91,6 +91,14 @@ let anura: Anura;
 // global
 
 window.addEventListener("load", async () => {
+	// AnuraOS is deployed below /AnuraOS/ on this host. Loading it from the
+	// domain root puts the document outside the service worker's allowed scope.
+	const appBasePath = "/AnuraOS/";
+	if (!window.location.pathname.startsWith(appBasePath)) {
+		window.location.replace(appBasePath + window.location.search + window.location.hash);
+		return;
+	}
+
 	const swShared: any = {
 		test: true,
 	};
@@ -172,7 +180,7 @@ window.addEventListener("load", async () => {
 		if (event.data?.anura_target === "anura.sw.reinit") initComlink(true);
 	});
 
-	await navigator.serviceWorker.register("/AnuraOS/anura-sw.js");
+	await navigator.serviceWorker.register("/AnuraOS/anura-sw.js", { scope: appBasePath });
 	// The first visit is not controlled until the newly installed worker calls clients.claim().
 	if (!navigator.serviceWorker.controller) {
 		await new Promise<void>((resolve) => {
@@ -355,7 +363,7 @@ window.addEventListener("load", async () => {
 		}
 	});
 
-	if ((await fetch("/fs/")).status !== 404) {
+	if ((await fetch("/AnuraOS/fs/")).status !== 404) {
 		try {
 			const files = await anura.fs.promises.readdir(directories["init"]);
 			if (files) {
@@ -700,7 +708,7 @@ async function bootx86() {
 async function bootUserCustomizations() {
 	const directories = anura.settings.get("directories");
 	console.debug("directories", directories);
-	if ((await fetch("/fs/")).status === 404) {
+	if ((await fetch("/AnuraOS/fs/")).status === 404) {
 		// Safe mode
 		// Register recovery helper app
 		const recovery = new RecoveryApp();
@@ -764,7 +772,7 @@ async function bootUserCustomizations() {
 		if (files === undefined) return;
 		for (const file of files) {
 			try {
-				await anura.registerExternalLib(`/fs/${directories["libs"]}/${file}/`);
+				await anura.registerExternalLib(`/AnuraOS/fs/${directories["libs"]}/${file}/`);
 			} catch (e) {
 				anura.logger.error("Anura failed to load a lib", e);
 			}
@@ -784,7 +792,7 @@ async function bootUserCustomizations() {
 				if (type === "DIRECTORY") {
 					try {
 						await anura.registerExternalApp(
-							`/fs/${directories["apps"]}/${file}/`,
+							`/AnuraOS/fs/${directories["apps"]}/${file}/`,
 						);
 					} catch (e) {
 						anura.logger.error("Anura failed to load an app", e);
