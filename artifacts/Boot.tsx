@@ -149,9 +149,11 @@ window.addEventListener("load", async () => {
 
 	swShared.anura = anura;
 	swShared.sh = new anura.fs.Shell();
-	async function initComlink() {
+	let comlinkController: ServiceWorker | null = null;
+	async function initComlink(force = false) {
 		const controller = navigator.serviceWorker.controller;
-		if (!controller) return;
+		if (!controller || (!force && controller === comlinkController)) return;
+		comlinkController = controller;
 
 		const { port1, port2 } = new MessageChannel();
 		const msg = {
@@ -165,15 +167,28 @@ window.addEventListener("load", async () => {
 		}
 	}
 
-	navigator.serviceWorker.addEventListener("controllerchange", initComlink);
+	navigator.serviceWorker.addEventListener("controllerchange", () => initComlink());
 	navigator.serviceWorker.addEventListener("message", (event) => {
-		if (event.data?.anura_target === "anura.sw.reinit") initComlink();
+		if (event.data?.anura_target === "anura.sw.reinit") initComlink(true);
 	});
 
 	await navigator.serviceWorker.register("/AnuraOS/anura-sw.js");
-	// On repeat visits the existing worker may already control this page.
-	// On first visits controllerchange will initialize Comlink after clients.claim().
+	// The first visit is not controlled until the newly installed worker calls clients.claim().
+	if (!navigator.serviceWorker.controller) {
+		await new Promise<void>((resolve) => {
+			const timeout = window.setTimeout(resolve, 10000);
+			navigator.serviceWorker.addEventListener(
+				"controllerchange",
+				() => {
+					window.clearTimeout(timeout);
+					resolve();
+				},
+				{ once: true },
+			);
+		});
+	}
 	if (navigator.serviceWorker.controller) initComlink();
+	else console.warn("Anura service worker did not take control before boot continued.");
 
 	// Create "Process" that controls the service worker
 
