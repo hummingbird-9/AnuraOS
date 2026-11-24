@@ -80,7 +80,7 @@ const rootEntries = [
   'x86images',
 ].join('|');
 const rootPathPattern = new RegExp(
-  "(?<=[\\\\\"'=(:,])/(?:"
+  "(?<=[\\\\\"'`=(:,])/(?:"
     + rootEntries
     + ")(?=$|[/?#.'\"\\\\s)])",
   'g',
