@@ -5,12 +5,10 @@ export PATH := $(HOME)/.cargo/bin:$(PATH)
 
 .PHONY: all static pages clean prepare
 
-# The upstream bootstrap tries to write .git/hooks directly. In this wrapper
-# upstream is a submodule, whose .git entry is a pointer file, so omit that
-# optional local-only pre-commit hook setup when producing the static build.
+# Keep upstream's optional local Git hook out of its submodule build and skip
+# Papirus icon mappings that have no source/destination (for example ".app").
 prepare:
-	@sed -i '/^[[:space:]]*make hooks[[:space:]]*$/d' "$(UPSTREAM_DIR)/Makefile"
-	@sed -i 's/\.files\[\] | "/.files[] | select(.source != null and .icon != null) | "/' "$(UPSTREAM_DIR)/apps/libfileview.lib/geticons.sh"
+	node scripts/prepare-upstream.mjs "$(UPSTREAM_DIR)"
 
 all: prepare
 	$(MAKE) -C "$(UPSTREAM_DIR)" all
