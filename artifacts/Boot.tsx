@@ -209,6 +209,14 @@ window.addEventListener("load", async () => {
 		}
 		await waitForController(10000);
 	}
+	if (!navigator.serviceWorker.controller && registration.active) {
+		// This request is sent only to registration.active, never to an
+		// installing or waiting worker. It repairs tabs that missed the
+		// activation-time clientsClaim() event.
+		console.warn("Anura service worker is active; requesting control of this tab.");
+		registration.active.postMessage({ anura_target: "anura.sw.claim" });
+		await waitForController(5000);
+	}
 	if (!navigator.serviceWorker.controller) {
 		// Reload once after activation so the next navigation is eligible for
 		// control by the active worker. Never enter a reload loop.

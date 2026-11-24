@@ -6,6 +6,14 @@ const callbacks = {};
 const filepickerCallbacks = {};
 
 addEventListener("message", async (event) => {
+	if (event.data?.anura_target === "anura.sw.claim") {
+		event.waitUntil(
+			self.clients.claim().then(() => {
+				console.info("[Anura SW] claimed in-scope clients on request.");
+			}),
+		);
+		return;
+	}
 	if (event.data.anura_target === "anura.x86.proxy") {
 		let callback = callbacks[event.data.id];
 		callback(event.data.value);
