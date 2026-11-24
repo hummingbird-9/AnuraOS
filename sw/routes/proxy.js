@@ -30,6 +30,8 @@ for (const method of methods) {
 						contentType: response.headers.get("content-type"),
 						xFrameOptions: response.headers.get("x-frame-options"),
 						contentSecurityPolicy: csp ? csp.slice(0, 500) : null,
+						crossOriginEmbedderPolicy: response.headers.get("cross-origin-embedder-policy"),
+						crossOriginOpenerPolicy: response.headers.get("cross-origin-opener-policy"),
 						location: response.headers.get("location"),
 					});
 					return response;
