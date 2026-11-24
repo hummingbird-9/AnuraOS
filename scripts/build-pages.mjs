@@ -82,7 +82,7 @@ const rootEntries = [
 const rootPathPattern = new RegExp(
   "(?<=[\\\\\"'`=(:,])/(?:"
     + rootEntries
-    + ")(?=$|[/?#.'\"\\\\s)])",
+    + ")(?=$|[/?#.'\"\\s)\\|])",
   'g',
 );
 const textExtensions = new Set([
