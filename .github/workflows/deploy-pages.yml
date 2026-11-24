@@ -1,0 +1,69 @@
+name: Build and deploy AnuraOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out AnuraOS and its source submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install system build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential gcc-multilib clang binaryen jq uuid-runtime wget curl
+
+      - name: Set up Anura's Rust toolchain
+        run: |
+          rustup toolchain install nightly --profile minimal --target wasm32-unknown-unknown,i686-unknown-linux-gnu
+          rustup default nightly
+
+      - name: Install Anura build tools
+        run: |
+          cargo install wasm-bindgen-cli --version 0.2.105 --locked
+          cargo install --git https://github.com/r58Playz/wasm-snip
+          npm install --global pnpm@10.12.1
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build AnuraOS with its official Makefile
+        run: make pages
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
