@@ -55,6 +55,8 @@ await cp(source, output, { recursive: true });
 // URLs belonging to proxied websites untouched.
 const rootEntries = [
   'anura-sw\\.js',
+  'COMMIT',
+  'MILESTONE',
   'apps',
   'artifacts',
   'assets',
@@ -66,6 +68,7 @@ const rootEntries = [
   'cache-load\\.json',
   'config\\.json',
   'favicon\\.ico',
+  'fs',
   'icon(?:_dark)?\\.png',
   'lib',
   'libs',
@@ -77,7 +80,9 @@ const rootEntries = [
   'x86images',
 ].join('|');
 const rootPathPattern = new RegExp(
-  `(?<![A-Za-z0-9+.-])/(?:${rootEntries})(?=$|[/?#.'"\\s)])`,
+  "(?<=[\\\\\"'=(:,])/(?:"
+    + rootEntries
+    + ")(?=$|[/?#.'\"\\\\s)])",
   'g',
 );
 const textExtensions = new Set([
@@ -100,10 +105,21 @@ if (basePath !== '/') {
   for (const file of await walk(output)) {
     if (!textExtensions.has(extname(file).toLowerCase())) continue;
     const original = await readFile(file, 'utf8');
-    const rewritten = original.replace(
+    let rewritten = original;
+    const protectedPaths = [
+      ['"/apps/libfileview.app/fileHandler.js"', '"__ANURA_INTERNAL_FILEHANDLER_PATH__"'],
+      ["'/apps/libfileview.app/fileHandler.js'", "'__ANURA_INTERNAL_FILEHANDLER_PATH__'"],
+    ];
+    for (const [path, sentinel] of protectedPaths) {
+      rewritten = rewritten.replaceAll(path, sentinel);
+    }
+    rewritten = rewritten.replace(
       rootPathPattern,
       (match) => `${basePath}${match.slice(1)}`,
     );
+    for (const [path, sentinel] of protectedPaths) {
+      rewritten = rewritten.replaceAll(sentinel, path);
+    }
     if (rewritten !== original) {
       await writeFile(file, rewritten);
       rewrittenFiles++;
