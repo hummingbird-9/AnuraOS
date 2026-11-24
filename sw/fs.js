@@ -16,20 +16,24 @@ const filersh = new filerfs.Shell();
 let opfs = undefined;
 let opfssh = undefined;
 
-const bootStrapFSReady = new Promise((res, rej) => {
-	console.log(globalThis);
+const bootStrapFSReady = new Promise((resolve) => {
 	globalThis.idbKeyval
 		.get("bootFromOPFS")
-		.then(async (res) => {
-			if (res) {
-				opfs = await LocalFS.newRootOPFS();
-				globalThis.anura = { fs: opfs }; // Stupid thing for AFSShell compat
-				opfssh = new AFSShell();
+		.then(async (bootFromOPFS) => {
+			if (bootFromOPFS) {
+				try {
+					opfs = await LocalFS.newRootOPFS();
+					globalThis.anura = { fs: opfs }; // Stupid thing for AFSShell compat
+					opfssh = new AFSShell();
+				} catch (error) {
+					console.warn("Unable to mount OPFS in the service worker; falling back to Filer.", error);
+				}
 			}
-			res(true);
+			resolve(true);
 		})
-		.catch((e) => {
-			res(true);
+		.catch((error) => {
+			console.warn("Unable to read the OPFS boot setting; falling back to Filer.", error);
+			resolve(true);
 		});
 });
 
