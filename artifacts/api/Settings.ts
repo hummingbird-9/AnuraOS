@@ -22,6 +22,7 @@ class Settings {
 		defaultsettings: { [key: string]: any },
 	) {
 		const initial = defaultsettings;
+		const configuredWispUrl = defaultsettings["wisp-url"];
 
 		if (!initial["i-am-a-true-gangsta"]) {
 			initial["i-am-a-true-gangsta"] = false;
@@ -69,6 +70,23 @@ class Settings {
 			Object.assign(initial, JSON.parse(raw as any));
 		} catch (e) {
 			fs.writeFile("/anura_settings.json", JSON.stringify(initial));
+		}
+
+
+		const pageOriginWisp =
+			(location.protocol === "https:" ? "wss://" : "ws://") +
+			window.location.host +
+			"/";
+		if (
+			configuredWispUrl &&
+			initial["wisp-url"] === pageOriginWisp &&
+			initial["wisp-url"] !== configuredWispUrl
+		) {
+			initial["wisp-url"] = configuredWispUrl;
+			await fs.promises.writeFile(
+				"/anura_settings.json",
+				JSON.stringify(initial),
+			);
 		}
 
 		return new Settings(fs, initial);
