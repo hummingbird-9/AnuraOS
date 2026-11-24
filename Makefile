@@ -1,5 +1,8 @@
 UPSTREAM_DIR ?= upstream
 
+# Rust tools installed by rustup/cargo live here on Arch and GitHub runners.
+export PATH := $(HOME)/.cargo/bin:$(PATH)
+
 .PHONY: all static pages clean prepare
 
 # The upstream bootstrap tries to write .git/hooks directly. In this wrapper
