@@ -182,8 +182,9 @@ window.addEventListener("load", async () => {
 
 	const registration = await navigator.serviceWorker.register("/AnuraOS/anura-sw.js", { scope: appBasePath });
 
-	// Ask the active worker to claim this page explicitly. This handles the case
-	// where the worker activated before the redirected /AnuraOS/ document existed.
+	// Workbox clientsClaim() handles takeover when the worker activates. Never
+	// message registration.installing/waiting here: a non-active worker cannot
+	// call clients.claim() and throws InvalidStateError.
 	const waitForController = (timeoutMs: number) =>
 		new Promise<boolean>((resolve) => {
 			if (navigator.serviceWorker.controller) return resolve(true);
@@ -199,14 +200,18 @@ window.addEventListener("load", async () => {
 			const timeout = window.setTimeout(finish, timeoutMs);
 			navigator.serviceWorker.addEventListener("controllerchange", onChange);
 		});
+
 	if (!navigator.serviceWorker.controller) {
-		const worker = registration.active || registration.waiting || registration.installing;
-		if (worker) worker.postMessage({ anura_target: "anura.sw.claim" });
+		try {
+			await navigator.serviceWorker.ready;
+		} catch (error) {
+			console.warn("Waiting for Anura service worker activation failed:", error);
+		}
 		await waitForController(10000);
 	}
 	if (!navigator.serviceWorker.controller) {
 		// Reload once after activation so the next navigation is eligible for
-		// control by the already-active worker. Never enter a reload loop.
+		// control by the active worker. Never enter a reload loop.
 		const retryKey = "anura-sw-control-reload";
 		if (!sessionStorage.getItem(retryKey) && registration.active) {
 			sessionStorage.setItem(retryKey, "1");
@@ -223,7 +228,6 @@ window.addEventListener("load", async () => {
 		sessionStorage.removeItem("anura-sw-control-reload");
 		initComlink();
 	}
-
 
 	// Create "Process" that controls the service worker
 

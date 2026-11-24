@@ -22,12 +22,9 @@ workbox.setConfig({
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
-// Keep an explicit activate handler alongside Workbox's helper. The page also
-// has an on-demand claim message for cases where it loaded during activation.
-self.addEventListener("activate", (event) => {
-	event.waitUntil(self.clients.claim());
-});
-
+// workbox.core.clientsClaim() above claims in-scope clients during activation.
+// Do not invoke clients.claim() from an arbitrary message event: only the active
+// service worker is allowed to claim clients.
 importScripts(
 	"/AnuraOS/sw/consts.js",
 	"/AnuraOS/sw/messages.js",
