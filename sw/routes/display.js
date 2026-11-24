@@ -18,6 +18,7 @@ workbox.routing.registerRoute(
 			);
 			return corsResponse;
 		}
+		return new Response("Missing or invalid blob URL.", { status: 400 });
 	},
 	"GET",
 );
@@ -36,6 +37,7 @@ workbox.routing.registerRoute(
 				},
 			});
 		}
+		return new Response("Missing display content.", { status: 400 });
 	},
 	"GET",
 );
