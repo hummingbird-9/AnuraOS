@@ -115,10 +115,10 @@ if (basePath !== '/') {
 const indexPath = resolve(output, 'index.html');
 let index = await readFile(indexPath, 'utf8');
 const baseTag = `<base href="${basePath}">`;
-if (/<base\\b/i.test(index)) {
-  index = index.replace(/<base\\b[^>]*>/i, baseTag);
+if (/<base\b/i.test(index)) {
+  index = index.replace(/<base\b[^>]*>/i, baseTag);
 } else {
-  index = index.replace(/<head\\b[^>]*>/i, (head) => `${head}\\n\\t\\t${baseTag}`);
+  index = index.replace(/<head\b[^>]*>/i, (head) => `${head}\n\t\t${baseTag}`);
 }
 await writeFile(indexPath, index);
 
