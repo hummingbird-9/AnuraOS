@@ -16,5 +16,6 @@ declare class Networking {
         set: (port: number, handler: () => Response) => Promise<void>;
         deregister: (port: number) => Promise<void>;
     };
+    readonly ready: Promise<void>;
     fetch: (input: RequestInfo | URL, init: RequestInit) => Promise<any>;
 }

@@ -14,32 +14,105 @@ class Networking {
 	private reconnectTimer: number | undefined;
 	private reconnectingSocket: WebSocket | undefined;
 	private reconnectDelay = 1000;
+	private libcurlReady: Promise<void>;
+	private resolveLibcurlReady!: () => void;
+	private rejectLibcurlReady!: (reason: Error) => void;
+	private libcurlSettled = false;
+	private libcurlTimeout: number | undefined;
+	private wispConnected = false;
+	private wispWaiters: Array<() => void> = [];
 
-	constructor(wisp_server: string) {
+		constructor(wisp_server: string) {
 		this.wispServer = wisp_server;
+		this.libcurlReady = new Promise<void>((resolve, reject) => {
+			this.resolveLibcurlReady = resolve;
+			this.rejectLibcurlReady = reject;
+		});
+		void this.libcurlReady.catch(() => {});
+		this.libcurlTimeout = window.setTimeout(() => this.failLibcurl(new Error("Timed out initializing libcurl. External browser requests cannot be proxied.")), 30000);
+
 		const upstream = new WebSocket(wisp_server);
 		this.upstream = upstream;
 		this.bus = new WispBus(upstream);
 		this.watchUpstream(upstream);
 
+		document.addEventListener("libcurl_load", () => {
+			if (this.libcurlSettled) return;
+			try {
+				this.libcurl.set_websocket(wisp_server);
+				this.external.fetch = this.libcurl.fetch;
+				Object.assign(this, {
+					WebSocket: this.libcurl.WebSocket,
+					Socket: this.libcurl.WispConnection,
+					TLSSocket: this.libcurl.TLSSocket,
+				});
+				this.libcurlSettled = true;
+				if (this.libcurlTimeout !== undefined) {
+					window.clearTimeout(this.libcurlTimeout);
+					this.libcurlTimeout = undefined;
+				}
+				console.info("Anura libcurl/Wisp transport initialized.");
+				this.resolveLibcurlReady();
+			} catch (error) {
+				this.failLibcurl(error);
+			}
+		}, { once: true });
+		document.addEventListener("libcurl_abort", (event: Event) => this.failLibcurl((event as CustomEvent).detail), { once: true });
+
 		//@ts-ignore
 		import(this.libcurl_src).then(async (m) => {
 			this.libcurl = m.libcurl;
-			this.libcurl.load_wasm(this.libcurl_wasm);
+			// Install Wisp bus before libcurl creates its HTTP session.
 			this.libcurl.transport = this.bus.getFakeWSProxySocket();
-		});
-		document.addEventListener("libcurl_load", () => {
-			this.libcurl.set_websocket(wisp_server);
-			this.external.fetch = this.libcurl.fetch;
+			await this.libcurl.load_wasm(this.libcurl_wasm);
+		}).catch((error) => this.failLibcurl(error));
+	}
 
-			Object.assign(this, {
-				WebSocket: this.libcurl.WebSocket,
-				Socket: this.libcurl.WispConnection,
-				TLSSocket: this.libcurl.TLSSocket,
-			});
-			console.debug("libcurl.js ready!");
+	private failLibcurl(reason: unknown) {
+		if (this.libcurlSettled) return;
+		this.libcurlSettled = true;
+		if (this.libcurlTimeout !== undefined) {
+			window.clearTimeout(this.libcurlTimeout);
+			this.libcurlTimeout = undefined;
+		}
+		const error = reason instanceof Error ? reason : new Error(String(reason ?? "Unknown libcurl error"));
+		console.error("Anura libcurl initialization failed:", error);
+		this.rejectLibcurlReady(error);
+	}
+
+	private markWispReady() {
+		if (this.wispConnected) return;
+		this.wispConnected = true;
+		for (const resolve of this.wispWaiters.splice(0)) resolve();
+	}
+
+	private markWispDisconnected() {
+		this.wispConnected = false;
+	}
+
+	private waitForWisp(timeoutMs = 30000): Promise<void> {
+		if (this.wispConnected) return Promise.resolve();
+		return new Promise<void>((resolve, reject) => {
+			let timer: number;
+			const finish = () => {
+				window.clearTimeout(timer);
+				const index = this.wispWaiters.indexOf(finish);
+				if (index !== -1) this.wispWaiters.splice(index, 1);
+				resolve();
+			};
+			timer = window.setTimeout(() => {
+				const index = this.wispWaiters.indexOf(finish);
+				if (index !== -1) this.wispWaiters.splice(index, 1);
+				reject(new Error("Timed out waiting for the Wisp proxy connection."));
+			}, timeoutMs);
+			this.wispWaiters.push(finish);
 		});
 	}
+
+	get ready(): Promise<void> {
+		return this.libcurlReady.then(() => this.waitForWisp());
+	}
+
 	private watchUpstream(socket: WebSocket, alreadyHandshaken = false) {
 		let handshaken = alreadyHandshaken;
 		let handshakeTimer: number | undefined;
@@ -62,13 +135,20 @@ class Networking {
 			handshaken = true;
 			if (handshakeTimer !== undefined) window.clearTimeout(handshakeTimer);
 			this.bus.upstreamBuffer = view.getUint32(5, true);
+			this.markWispReady();
 		});
 		socket.addEventListener("close", () => {
 			if (handshakeTimer !== undefined) window.clearTimeout(handshakeTimer);
-			if (this.upstream === socket) this.scheduleReconnect();
+			if (this.upstream === socket) {
+				this.markWispDisconnected();
+				this.scheduleReconnect();
+			}
 		});
 		socket.addEventListener("error", () => {
-			if (this.upstream === socket && socket.readyState === WebSocket.CLOSED) this.scheduleReconnect();
+			if (this.upstream === socket && socket.readyState === WebSocket.CLOSED) {
+				this.markWispDisconnected();
+				this.scheduleReconnect();
+			}
 		});
 	}
 	private scheduleReconnect() {
@@ -122,6 +202,7 @@ class Networking {
 			this.reconnectingSocket = undefined;
 			this.reconnectDelay = 1000;
 			this.watchUpstream(socket, true);
+			this.markWispReady();
 			console.info("Wisp upstream reconnected.");
 		};
 		timeout = window.setTimeout(retry, 10000);
@@ -160,6 +241,8 @@ class Networking {
 				return this.loopback.call(port, request!);
 			}
 		}
+		// Avoid CORS-limited window.fetch before the libcurl proxy is ready.
+		await this.ready;
 		return this.external.fetch(input, init);
 	};
 }
