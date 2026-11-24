@@ -6,6 +6,7 @@ all:
 	$(MAKE) -C "$(UPSTREAM_DIR)" all
 
 static:
+	rm -rf "$(UPSTREAM_DIR)/static"
 	$(MAKE) -C "$(UPSTREAM_DIR)" static
 
 pages: static
