@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class RecoveryApp extends App {
     name: string;
     package: string;

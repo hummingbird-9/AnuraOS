@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class Taskbar {
     #private;
     timeformat: Intl.DateTimeFormat;

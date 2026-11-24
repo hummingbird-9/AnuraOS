@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class NotificationService {
     state: Stateful<{
         notifications: AnuraNotification[];

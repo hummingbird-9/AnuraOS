@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class AboutApp extends App {
     name: string;
     package: string;

@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 type Empty = Record<string, never>;
 declare class AnuraUI {
     /**
@@ -18,7 +17,7 @@ declare class AnuraUI {
      * @param component - The name of the component to register.
      * @param element - A function component that returns an HTMLElement.
      */
-    registerComponent<TPublic, TPrivate, TConstructed extends string | number | symbol = never>(component: string, element: Component<TPublic, TPrivate, TConstructed>): Promise<void>;
+    registerComponent<TProps extends object, TPrivate extends object, TPublic extends object>(component: string, element: Component<TProps, TPrivate, TPublic>): Promise<void>;
     /**
      * This function allows you to register a component from an external library.
      * @param lib - The name of the library to import the component from.
@@ -31,7 +30,7 @@ declare class AnuraUI {
      * @param name - The name of the component to import.
      * @returns A promise that resolves to a function component that returns an HTMLElement.
      */
-    get<TPublic, TPrivate, TConstructed extends string | number | symbol = never>(name: string): Promise<Component<TPublic, TPrivate, TConstructed>>;
+    get<TProps extends object, TPrivate extends object, TPublic extends object>(name: string): Promise<Component<TProps, TPrivate, TPublic>>;
     /**
      * This function allows you to check if a component is registered.
      * @param component - The name of the component to check.
@@ -69,12 +68,11 @@ declare class AnuraUI {
      * document.body.appendChild(boundButton);
      * ```
      */
-    use<TPublic, TPrivate, TConstructed extends string | number | symbol = never>(components?: string[] | string | "*"): Promise<{
-        [key: string]: Component<TPublic, TPrivate, TConstructed>;
+    use<TProps extends object, TPrivate extends object, TPublic extends object>(components?: string[] | string | "*"): Promise<{
+        [key: string]: Component<TProps, TPrivate, TPublic>;
     }>;
     /**
-     * This function initializes the UI API with the list of components.
-     * It is called on boot, and should not be called manually.
+     * Install internal components
      */
     init(): void;
 }

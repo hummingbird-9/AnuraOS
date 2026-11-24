@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class Calendar {
     state: Stateful<{
         show?: boolean;

@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 type AltTabViewState = {
     windows: [App, WMWindow][];
     index: number;

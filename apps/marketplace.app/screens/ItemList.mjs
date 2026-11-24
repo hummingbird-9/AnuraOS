@@ -1,44 +1,86 @@
 function Item() {
-    const repo = state.currentRepo[2];
-    let desc;
-    let id;
-    if (repo.version === "legacy") {
-        desc = this.data.desc;
-        id = this.data.name;
-    } else {
-        desc = this.data.summary;
-        id = this.data.package;
-    }
+	const repo = state.currentRepo[2];
+	let desc;
+	let id;
+	if (repo.version === "legacy") {
+		desc = this.data.desc;
+		id = this.data.name;
+	} else {
+		desc = this.data.summary;
+		id = this.data.package;
+	}
 
-    this.mount = async () => {
-        let installed;
-        if (this.type === "app") {
-            this.thumbnail.src = await repo.getAppThumb(id);
-            installed = !!anura.apps[this.data.package];
-        } else {
-            this.thumbnail.src = await repo.getLibThumb(id);
-            installed = !!anura.libs[this.data.package];
-        }
+	this.mount = async () => {
+		let observerOptions = {
+			root: document.all.screen,
+			rootMargin: "0px",
+			threshold: 0.1,
+		};
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(async (entry) => {
+				if (entry.isIntersecting) {
+					observer.unobserve(entry.target);
+					let installed;
+					if (this.type === "app") {
+						if (!this.thumbnail.src) {
+							this.thumbnail.src = await repo.getAppThumb(id);
+						}
+						installed = !!anura.apps[this.data.package];
+					} else {
+						this.thumbnail.src = await repo.getLibThumb(id);
+						installed = !!anura.libs[this.data.package];
+					}
+					if (installed) {
+						if (this.type === "app") {
+							this.installButton.value = "Open";
+							this.installButton.addEventListener("click", async (e) => {
+								e.stopPropagation();
+								anura.apps[this.data.package].open();
+							});
+						} else {
+							this.installButton.value = "Installed";
+							this.installButton.disabled = true;
+						}
+						this.installButton.style.backgroundColor = "var(--theme-bg)";
+						this.installButton.style.color = "#fff";
+					} else {
+						this.installButton.value = "Install";
+						this.installButton.canOpen = false;
+						this.installButton.addEventListener("click", async (e) => {
+							e.stopPropagation();
+							if (this.type === "app") {
+								if (this.installButton.canOpen) {
+									anura.apps[this.data.package].open();
+								} else {
+									this.installButton.value = "Installing...";
+									this.installButton.disabled = true;
+									if ((await repo.installApp(id)) === 200) {
+										this.installButton.value = "Open";
+										this.installButton.canOpen = true;
+										this.installButton.disabled = false;
+										this.installButton.style.backgroundColor =
+											"var(--theme-bg)";
+										this.installButton.style.color = "#fff";
+									}
+								}
+							} else {
+								this.installButton.style.backgroundColor = "var(--theme-bg)";
+								this.installButton.style.color = "#fff";
+								this.installButton.disabled = true;
+								this.installButton.value = "Installing...";
+								if ((await repo.installLib(id)) === 200) {
+									this.installButton.value = "Installed";
+								}
+							}
+						});
+					}
+				}
+			});
+		}, observerOptions);
+		observer.observe(this.root);
+	};
 
-        if (installed) {
-            this.installButton.value = "Installed";
-            this.installButton.style.backgroundColor = "var(--theme-bg)";
-            this.installButton.style.color = "#fff";
-            this.installButton.disabled = true;
-        } else {
-            this.installButton.value = "Install";
-            this.installButton.addEventListener("click", async (e) => {
-                e.stopPropagation();
-                if (this.type === "app") {
-                    await repo.installApp(id);
-                } else {
-                    await repo.installLib(id);
-                }
-            });
-        }
-    };
-
-    this.css = `
+	this.css = `
         height: 100px;
         width: 100%;
         background: var(--theme-secondary-bg);
@@ -86,43 +128,42 @@ function Item() {
         }
     `;
 
-    return html`<div
-        class="item"
-        on:click=${() => {
-            state.currentItem = this.data;
-            state.currentItemType = this.type;
-            state.currentScreen = "overview";
-        }}
-    >
-        <img class="thumbnail" bind:this=${use(this.thumbnail)} />
-        <div class="infoContainer">
-            <span>${this.data.name}</span>
-            <p>${desc}</p>
-        </div>
-        <input
-            class="matter-button-contained"
-            bind:this=${use(this.installButton)}
-            type="button"
-        />
-    </div>`;
+	return html`<div
+		class="item"
+		on:click=${() => {
+			state.currentItem = this.data;
+			state.currentItemType = this.type;
+			state.currentScreen = "overview";
+		}}
+	>
+		<img class="thumbnail" bind:this=${use(this.thumbnail)} />
+		<div class="infoContainer">
+			<span>${this.data.name}</span>
+			<p>${desc}</p>
+		</div>
+		<input
+			class="matter-button-contained"
+			bind:this=${use(this.installButton)}
+			type="button"
+		/>
+	</div>`;
 }
 
 export default function ItemList() {
-    this.mount = async () => {
-        console.log(state.currentRepo);
-        const apps = await state.currentRepo[2].getApps();
-        const libs = await state.currentRepo[2].getLibs();
+	this.mount = async () => {
+		const apps = await state.currentRepo[2].getApps();
+		const libs = await state.currentRepo[2].getLibs();
 
-        apps.forEach(async (app) => {
-            this.listElem.appendChild(html`<${Item} type="app" data=${app} />`);
-        });
+		apps.forEach(async (app) => {
+			this.listElem.appendChild(html`<${Item} type="app" data=${app} />`);
+		});
 
-        libs.forEach(async (lib) => {
-            this.listElem.appendChild(html`<${Item} type="lib" data=${lib} />`);
-        });
-    };
+		libs.forEach(async (lib) => {
+			this.listElem.appendChild(html`<${Item} type="lib" data=${lib} />`);
+		});
+	};
 
-    this.css = `
+	this.css = `
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -178,7 +219,7 @@ export default function ItemList() {
             align-items: center;
             width: calc(70% - 8px);
             position: fixed;
-            top: 28.5px;
+            top: 28px;
             left: calc(30% + 1px);
             height: 4.5rem;
             background: color-mix(in srgb, var(--theme-bg) 80%, transparent);
@@ -187,32 +228,36 @@ export default function ItemList() {
         }
     `;
 
-    return html`
-        <div>
-            <div id="searchContainer">
-                <input
-                    placeholder="Search for items..."
-                    on:input=${() => {
-                        const searchQuery = this.search.value.toLowerCase();
-                        Array.from(this.listElem.children).forEach((item) => {
-                            const itemName = item
-                                .querySelector("span")
-                                .innerText.toLowerCase();
-                            if (searchQuery === "") {
-                                item.style.display = "";
-                            } else if (itemName.includes(searchQuery)) {
-                                item.style.display = "";
-                            } else {
-                                item.style.display = "none";
-                            }
-                        });
-                    }}
-                    bind:this=${use(this.search)}
-                    type="text"
-                    id="searchBox"
-                />
-            </div>
-            <div id="itemList" bind:this=${use(this.listElem)}></div>
-        </div>
-    `;
+	return html`
+		<div>
+			<div id="searchContainer">
+				<input
+					placeholder="Search for items..."
+					on:input=${async () => {
+						//  async because this is a potentially long operation..
+						const searchQuery = this.search.value.toLowerCase();
+
+						for (const item of this.listElem.children) {
+							if (searchQuery === "") {
+								item.style.display = "";
+								continue;
+							}
+							const itemName = item
+								.querySelector("span")
+								.innerText.toLowerCase();
+							if (itemName.includes(searchQuery)) {
+								item.style.display = "";
+							} else {
+								item.style.display = "none";
+							}
+						}
+					}}
+					bind:this=${use(this.search)}
+					type="text"
+					id="searchBox"
+				/>
+			</div>
+			<div id="itemList" bind:this=${use(this.listElem)}></div>
+		</div>
+	`;
 }

@@ -1,7 +1,9 @@
 declare class XFrogApp extends App {
-    manifest: AppManifest;
-    activeWin: WMWindow;
+    name: string;
+    package: string;
+    icon: string;
     hidden: boolean;
+    activeWin: WMWindow;
     xwindows: {
         [wid: string]: WMWindow;
     };

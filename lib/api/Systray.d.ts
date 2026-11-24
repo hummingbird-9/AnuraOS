@@ -1,8 +1,14 @@
+interface SystrayInit {
+    onclick: (event: MouseEvent) => void;
+    onrightclick: (event: MouseEvent) => void;
+    icon: string;
+    tooltip: string;
+}
 declare class SystrayIcon {
     element: HTMLImageElement;
     onclick: (event: MouseEvent) => void;
     onrightclick: (event: MouseEvent) => void;
-    constructor(template: any);
+    constructor(init?: SystrayInit);
     get icon(): string;
     set icon(value: string);
     get tooltip(): string;
@@ -13,5 +19,5 @@ declare class Systray {
     element: HTMLSpanElement;
     icons: SystrayIcon[];
     constructor();
-    create: (template?: any) => SystrayIcon;
+    create(init?: SystrayInit): SystrayIcon;
 }

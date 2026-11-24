@@ -6,30 +6,25 @@
  *
  * nope nope this code has NOT been stolen rafflesia did NOT make it :thumbsup:
  */
-/// <reference types="dreamland" />
 type SnappedWindow = {
     window: WMWindow;
-    direction: "left" | "right";
+    direction: "left" | "right" | "ne" | "nw" | "se" | "sw";
 };
-declare let splitBar: WMSplitBar | null;
 declare const minimizedSnappedWindows: SnappedWindow[];
 declare const snappedWindows: SnappedWindow[];
-/**
- * to show a floating dialog displaying the given dom element
- * @param {Object} title "title of the dialog"
- */
-declare const windowInformation: {};
-declare const windowID = 0;
+declare let splitBar: WMSplitBar | null;
 declare class WindowInformation {
     title: string;
-    width: string;
-    minwidth: number;
     height: string;
-    minheight: number;
-    allowMultipleInstance: boolean;
-    resizable: boolean;
+    width: string;
+    minwidth?: number;
+    minheight?: number;
+    resizable?: boolean;
+    args?: string[];
 }
-declare class WMWindow extends EventTarget {
+declare class WMWindow extends EventTarget implements Process {
+    #private;
+    app?: App | undefined;
     element: HTMLElement;
     content: HTMLElement;
     maximized: boolean;
@@ -52,15 +47,20 @@ declare class WMWindow extends EventTarget {
     onresize: (w: number, h: number) => void;
     onclose: () => void;
     onmaximize: () => void;
-    onsnap: (snapDirection: "left" | "right" | "top") => void;
+    onsnap: (snapDirection: "left" | "right" | "top" | "ne" | "nw" | "se" | "sw") => void;
     onunmaximize: () => void;
     snapped: boolean;
     clampWindows: boolean;
     justresized: boolean;
     minimizing: boolean;
     mouseover: boolean;
-    maximizeImg: HTMLImageElement;
-    constructor(wininfo: WindowInformation);
+    get title(): string;
+    set title(title: string);
+    get args(): string[];
+    maximizeImg: HTMLOrSVGElement;
+    maximizeSvg: HTMLOrSVGElement;
+    restoreSvg: HTMLOrSVGElement;
+    constructor(wininfo: WindowInformation, app?: App | undefined);
     handleDrag(evt: PointerEvent): void;
     focus(): void;
     close(): void;
@@ -70,10 +70,16 @@ declare class WMWindow extends EventTarget {
     remaximize(): Promise<void>;
     minimize(): void;
     unminimize(): void;
-    snap(snapDirection: "left" | "right" | "top"): void;
-    getSnapDirection(forceX: number, forceY: number): "left" | "right" | "top" | null;
-    getSnapDirectionFromPosition(left: number, width: number): "left" | "right" | null;
-    snapPreview(side: "left" | "right" | "top"): DLElement<any>;
+    snap(snapDirection: "left" | "right" | "top" | "ne" | "nw" | "se" | "sw"): void;
+    getSnapDirection(forceX: number, forceY: number): "left" | "right" | "top" | "ne" | "nw" | "se" | "sw" | null;
+    getSnapDirectionFromPosition(left: number, width: number): "left" | "right" | "top" | "ne" | "nw" | "se" | "sw" | null;
+    snapPreview(side: "left" | "right" | "top" | "ne" | "nw" | "se" | "sw"): DLElement<any>;
+    pid: number;
+    stdout: ReadableStream<Uint8Array>;
+    stdin: WritableStream<Uint8Array>;
+    stderr: ReadableStream<Uint8Array>;
+    kill: () => void;
+    get alive(): boolean;
 }
 declare class WMSplitBar {
     dragging: boolean;
@@ -92,7 +98,7 @@ declare class WMSplitBar {
     instantRemove(): void;
 }
 declare let AliceWM: {
-    create: (givenWinInfo: string | WindowInformation) => WMWindow;
+    create: (givenWinInfo: string | WindowInformation, app?: App) => WMWindow;
 };
 declare function deactivateFrames(): void;
 declare function reactivateFrames(): void;
@@ -103,7 +109,3 @@ declare function normalizeZindex(): Promise<void>;
  * @param {Object} element
  */
 declare function center(element: HTMLElement): void;
-/**
- * callback function for the dialog closed event
- * @param {Object} container
- */

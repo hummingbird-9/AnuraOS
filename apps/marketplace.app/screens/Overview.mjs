@@ -1,40 +1,66 @@
 export default function Overview() {
-    const repo = state.currentRepo[2];
-    let id =
-        repo.version === "legacy"
-            ? state.currentItem.name
-            : state.currentItem.package;
+	const repo = state.currentRepo[2];
+	let id =
+		repo.version === "legacy"
+			? state.currentItem.name
+			: state.currentItem.package;
 
-    this.mount = async () => {
-        let installed;
-        if (state.currentItemType === "app") {
-            this.thumbnail.src = await repo.getAppThumb(id);
-            installed = !!anura.apps[state.currentItem.package];
-        } else {
-            this.thumbnail.src = await repo.getLibThumb(id);
-            installed = !!anura.libs[state.currentItem.package];
-        }
+	this.mount = async () => {
+		let installed;
+		if (state.currentItemType === "app") {
+			this.thumbnail.src = await repo.getAppThumb(id);
+			installed = !!anura.apps[state.currentItem.package];
+		} else {
+			this.thumbnail.src = await repo.getLibThumb(id);
+			installed = !!anura.libs[state.currentItem.package];
+		}
 
-        if (installed) {
-            this.installButton.value = "Installed";
-            this.installButton.style.backgroundColor =
-                "var(--theme-secondary-bg)";
-            this.installButton.style.color = "#fff";
-            this.installButton.disabled = true;
-        } else {
-            this.installButton.value = "Install";
-            this.installButton.addEventListener("click", async (e) => {
-                e.stopPropagation();
-                if (state.currentItemType === "app") {
-                    await repo.installApp(id);
-                } else {
-                    await repo.installLib(id);
-                }
-            });
-        }
-    };
+		if (installed) {
+			if (state.currentItemType === "app") {
+				this.installButton.value = "Open";
+				this.installButton.addEventListener("click", async (e) => {
+					e.stopPropagation();
+					anura.apps[state.currentItem.package].open();
+				});
+			} else {
+				this.installButton.value = "Installed";
+				this.installButton.disabled = true;
+			}
+			this.installButton.style.backgroundColor = "var(--theme-bg)";
+			this.installButton.style.color = "#fff";
+		} else {
+			this.installButton.value = "Install";
+			this.installButton.canOpen = false;
+			this.installButton.addEventListener("click", async (e) => {
+				e.stopPropagation();
+				if (state.currentItemType === "app") {
+					if (this.installButton.canOpen) {
+						anura.apps[state.currentItem.package].open();
+					} else {
+						this.installButton.value = "Installing...";
+						this.installButton.disabled = true;
+						if ((await repo.installApp(id)) === 200) {
+							this.installButton.value = "Open";
+							this.installButton.canOpen = true;
+							this.installButton.disabled = false;
+							this.installButton.style.backgroundColor = "var(--theme-bg)";
+							this.installButton.style.color = "#fff";
+						}
+					}
+				} else {
+					this.installButton.style.backgroundColor = "var(--theme-bg)";
+					this.installButton.style.color = "#fff";
+					this.installButton.disabled = true;
+					this.installButton.value = "Installing...";
+					if ((await repo.installLib(id)) === 200) {
+						this.installButton.value = "Installed";
+					}
+				}
+			});
+		}
+	};
 
-    this.css = `
+	this.css = `
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -130,33 +156,33 @@ export default function Overview() {
         }
     `;
 
-    return html` <div>
-        <div class="infoSection">
-            <div class="infoContainer">
-                <div class="thumbnailContainer">
-                    <img class="thumbnail" bind:this=${use(this.thumbnail)} />
-                </div>
-                <div class="appInfoContainer">
-                    <h1 class="appTitle">${state.currentItem.name}</h1>
-                    <span class="appCategory"
-                        >${state.currentItem.category || "Uncategorized"}</span
-                    >
-                </div>
-                <input
-                    class="matter-button-contained"
-                    bind:this=${use(this.installButton)}
-                    type="button"
-                />
-            </div>
-        </div>
-        <div class="screenshotSection" style=${{ display: "none" }}>
-            Unimplemented
-        </div>
-        <div class="aboutSection">
-            <div class="aboutContainer">
-                <h2 class="aboutTitle">${state.currentItem.summary || ""}</h2>
-                <p class="aboutDesc">${state.currentItem.desc}</p>
-            </div>
-        </div>
-    </div>`;
+	return html` <div>
+		<div class="infoSection">
+			<div class="infoContainer">
+				<div class="thumbnailContainer">
+					<img class="thumbnail" bind:this=${use(this.thumbnail)} />
+				</div>
+				<div class="appInfoContainer">
+					<h1 class="appTitle">${state.currentItem.name}</h1>
+					<span class="appCategory"
+						>${state.currentItem.category || "Uncategorized"}</span
+					>
+				</div>
+				<input
+					class="matter-button-contained"
+					bind:this=${use(this.installButton)}
+					type="button"
+				/>
+			</div>
+		</div>
+		<div class="screenshotSection" style=${{ display: "none" }}>
+			Unimplemented
+		</div>
+		<div class="aboutSection">
+			<div class="aboutContainer">
+				<h2 class="aboutTitle">${state.currentItem.summary || ""}</h2>
+				<p class="aboutDesc">${state.currentItem.desc}</p>
+			</div>
+		</div>
+	</div>`;
 }

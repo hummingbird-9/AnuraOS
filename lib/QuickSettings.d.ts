@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class QuickSettings {
     dateformat: Intl.DateTimeFormat;
     state: Stateful<{

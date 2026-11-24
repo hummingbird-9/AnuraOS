@@ -1,12 +1,11 @@
-/// <reference types="dreamland" />
 declare const channel: BroadcastChannel;
 declare let activetab: boolean;
+declare let splashToRemove: HTMLElement | null;
 declare const clickoffCheckerState: Stateful<{
     active: boolean;
 }>;
 declare const clickoffChecker: JSX.Element;
 declare const updateClickoffChecker: (show: boolean) => void;
-declare const contextMenu: ContextMenu;
 declare let taskbar: Taskbar;
 declare let launcher: Launcher;
 declare let oobeview: OobeView;

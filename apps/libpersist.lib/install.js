@@ -1,29 +1,30 @@
 export default function install(anura) {
-    const directories = anura.settings.get("directories");
+	const directories = anura.settings.get("directories");
 
-    anura.fs.exists(directories["opt"] + "/anura.persistence", (exists) => {
-        if (exists) return;
-        anura.fs.mkdir(directories["opt"] + "/anura.persistence");
-        anura.fs.mkdir(directories["opt"] + "/anura.persistence/providers");
-        anura.fs.mkdir(
-            directories["opt"] + "/anura.persistence/providers/anureg",
-        );
+	anura.fs.exists(directories["opt"] + "/anura.persistence", async (exists) => {
+		if (exists) return;
+		await anura.fs.promises.mkdir(directories["opt"] + "/anura.persistence");
+		await anura.fs.promises.mkdir(
+			directories["opt"] + "/anura.persistence/providers",
+		);
+		await anura.fs.promises.mkdir(
+			directories["opt"] + "/anura.persistence/providers/anureg",
+		);
 
-        anura.fs.writeFile(
-            directories["opt"] +
-                "/anura.persistence/providers/anureg/manifest.json",
-            JSON.stringify({
-                name: "anureg",
-                vendor: "[[internal]]",
-                description:
-                    "Anura's default persistance provider, using a simple JSON file",
-                handler: "index.js",
-            }),
-        );
+		await anura.fs.promises.writeFile(
+			directories["opt"] + "/anura.persistence/providers/anureg/manifest.json",
+			JSON.stringify({
+				name: "anureg",
+				vendor: "[[internal]]",
+				description:
+					"Anura's default persistance provider, using a simple JSON file",
+				handler: "index.js",
+			}),
+		);
 
-        anura.fs.writeFile(
-            directories["opt"] + "/anura.persistence/providers/anureg/index.js",
-            `const { PersistenceProvider } = await anura.import("anura.persistence");
+		await anura.fs.promises.writeFile(
+			directories["opt"] + "/anura.persistence/providers/anureg/index.js",
+			`const { PersistenceProvider } = await anura.import("anura.persistence");
 export default class Anureg extends PersistenceProvider {
     cache = {};
     fs;
@@ -86,6 +87,6 @@ export default class Anureg extends PersistenceProvider {
 }
 export const using = ["fs", "basepath"];
 export const lifecycle = ["init"];`,
-        );
-    });
+		);
+	});
 }

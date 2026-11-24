@@ -1,4 +1,3 @@
-/// <reference types="dreamland" />
 declare class Launcher {
     state: Stateful<{
         active: boolean;
