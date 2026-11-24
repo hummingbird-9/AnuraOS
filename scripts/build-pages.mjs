@@ -80,9 +80,9 @@ const rootEntries = [
   'x86images',
 ].join('|');
 const rootPathPattern = new RegExp(
-  "(?<=[\\\\\"'`=(:,])/(?:"
+  "(?<=[\"'\x60=(:,])/(?:"
     + rootEntries
-    + ")(?=$|[/?#.'\"\\s)\\\\|])",
+    + ")(?=$|[/?#.'\"\\s)|])",
   'g',
 );
 const textExtensions = new Set([
