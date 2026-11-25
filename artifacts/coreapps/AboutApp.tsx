@@ -1,7 +1,7 @@
 class AboutApp extends App {
 	name = "About Anura";
 	package = "anura.about";
-	icon = "/AnuraOS/assets/icons/aboutapp.png";
+	icon = "/assets/icons/aboutapp.png";
 
 	page = () => (
 		<div class="aboutapp-container">
@@ -24,7 +24,7 @@ class AboutApp extends App {
 					<button
 						on:click={() => {
 							anura.apps["anura.browser"].open([
-								`https://github.com/MercuryWorkshop/AnuraOS/commit/${this.getOSBuild()}`,
+								`https://github.com/MercuryWorkshop/anuraOS/commit/${this.getOSBuild()}`,
 							]);
 						}}
 						class="aboutapp-link-button"
@@ -68,7 +68,7 @@ class AboutApp extends App {
 					<button
 						on:click={() => {
 							anura.apps["anura.browser"].open([
-								"https://github.com/MercuryWorkshop/AnuraOS/blob/main/LICENSE",
+								"https://github.com/MercuryWorkshop/anuraOS/blob/main/LICENSE",
 							]);
 						}}
 						class="aboutapp-link-button"
@@ -95,7 +95,7 @@ class AboutApp extends App {
 			if (args.includes("fuller-screen-easter-egg")) {
 				// You asked for it
 				document.body.style.background =
-					"url(AnuraOS/assets/images/idol.gif) no-repeat center center fixed";
+					"url(/assets/images/idol.gif) no-repeat center center fixed";
 
 				anura.wm.windows.forEach((win) => {
 					// No animation
@@ -112,7 +112,7 @@ class AboutApp extends App {
 				)! as HTMLLinkElement;
 
 				icon.type = "image/gif";
-				icon.href = "/AnuraOS/assets/images/idol.gif";
+				icon.href = "/assets/images/idol.gif";
 
 				return;
 			}
@@ -127,7 +127,7 @@ class AboutApp extends App {
 
 		if (fullscreenEasterEgg) {
 			aboutview.content.appendChild(
-				<div style="background: url(AnuraOS/assets/images/idol.gif); width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat;"></div>,
+				<div style="background: url(/assets/images/idol.gif); width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat;"></div>,
 			);
 		} else {
 			aboutview.content.appendChild(this.page());

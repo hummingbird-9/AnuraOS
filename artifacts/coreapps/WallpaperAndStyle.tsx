@@ -6,7 +6,7 @@ type WallpaperObject = {
 class WallpaperAndStyle extends App {
 	name = "Wallpaper & Style";
 	package = "anura.wallpaper";
-	icon = "/AnuraOS/assets/icons/wallpaper.png";
+	icon = "/assets/icons/wallpaper.png";
 
 	libfilepicker: {
 		selectFile: (options?: object) => Promise<string | string[]>;
@@ -611,8 +611,7 @@ class WallpaperAndStyle extends App {
 			currWallpaperName === undefined ||
 			currWallpaperName === null
 		) {
-			currWallpaper =
-				"/AnuraOS/assets/wallpaper/bundled_wallpapers/Nocturne.jpg";
+			currWallpaper = "/assets/wallpaper/bundled_wallpapers/Nocturne.jpg";
 			currWallpaperName = "Nocturne";
 			anura.settings.set("wallpaper", currWallpaper);
 			anura.settings.set("wallpaper-name", currWallpaperName);
@@ -625,7 +624,7 @@ class WallpaperAndStyle extends App {
 
 	async loadWallpaperManifest() {
 		const wallpaperManifest = await fetch(
-			"/AnuraOS/assets/wallpaper/bundled_wallpapers/manifest.json",
+			"/assets/wallpaper/bundled_wallpapers/manifest.json",
 		);
 		return JSON.parse(await wallpaperManifest.text());
 	}

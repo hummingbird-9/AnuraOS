@@ -1,10 +1,9 @@
 /* global workbox, bootStrapFSReady, idbKeyval, cacheenabled, opfs, filerfs, opfssh, filersh, serveFile, corsheaders */
 
 workbox.routing.registerRoute(
-	({ url }) =>
-		url.origin === self.location.origin &&
-		!/(\/config\.json|\/MILESTONE|\/COMMIT|\/x86images\/)/.test(url.pathname),
+	/^(?!.*(\/config.json|\/MILESTONE|\/COMMIT|\/x86images\/))/,
 	async (event) => {
+		if (new URL(event.url).origin !== self.location.origin) return false;
 		await bootStrapFSReady;
 		if (cacheenabled === undefined) {
 			console.debug("retrieving cache value");
@@ -50,26 +49,37 @@ workbox.routing.registerRoute(
 		} else {
 			try {
 				const fetchResponse = await fetch(event.request);
-			const responseBuffer = await fetchResponse.clone().arrayBuffer();
-			const corsResponse = new Response(responseBuffer, {
-				headers: {
-					...Object.fromEntries(fetchResponse.headers.entries()),
-					...corsheaders,
-				},
-			});
+				// Promise so that we can return the response before we cache it, for faster response times
+				return new Promise(async (resolve) => {
+					const corsResponse = new Response(
+						await fetchResponse.clone().arrayBuffer(),
+						{
+							headers: {
+								...Object.fromEntries(fetchResponse.headers.entries()),
+								...corsheaders,
+							},
+						},
+					);
 
-			// Cache in the background. A failed cache write must never make a
-			// successful network response turn into an invalid service-worker response.
-			if (fetchResponse.ok) {
-				void (async () => {
-					await sh.promises.mkdirp(`${basepath}${path.replace(/[^/]*$/g, "")}`);
-					const buffer = await fetchResponse.clone().arrayBuffer();
-					await fs.promises.writeFile(`${basepath}${path}`, Buffer.from(buffer));
-				})().catch((error) => {
-					console.warn("Unable to cache fetched resource:", path, error);
+					resolve(corsResponse);
+
+					if (fetchResponse.ok) {
+						const buffer = await fetchResponse.clone().arrayBuffer();
+						await sh.promises.mkdirp(
+							`${basepath}${path.replace(/[^/]*$/g, "")}`,
+						);
+						// Explicitly use Filer's fs here, as
+						// Buffers lose their inheritance when passed
+						// to anura's fs, causing them to be treated as
+						// strings
+						await fs.promises.writeFile(
+							`${basepath}${path}`,
+							Buffer.from(buffer),
+						);
+					}
+				}).catch((e) => {
+					console.error("I hate this bug: ", e);
 				});
-			}
-			return corsResponse;
 			} catch (e) {
 				return new Response(
 					JSON.stringify({

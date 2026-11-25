@@ -1,7 +1,7 @@
 /* global workbox, corsheaders */
 
 workbox.routing.registerRoute(
-	({ url }) => /\/blob\/?$/.test(url.pathname),
+	/\/blob/,
 	async (event) => {
 		console.log("Got blob req");
 		const blobURL = new URL(event.request.url).searchParams.get("url");
@@ -18,13 +18,12 @@ workbox.routing.registerRoute(
 			);
 			return corsResponse;
 		}
-		return new Response("Missing or invalid blob URL.", { status: 400 });
 	},
 	"GET",
 );
 
 workbox.routing.registerRoute(
-	({ url }) => /\/display\/?$/.test(url.pathname),
+	/\/display/,
 	async (event) => {
 		const url = new URL(event.request.url);
 		const content = url.searchParams.get("content");
@@ -37,7 +36,6 @@ workbox.routing.registerRoute(
 				},
 			});
 		}
-		return new Response("Missing display content.", { status: 400 });
 	},
 	"GET",
 );

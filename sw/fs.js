@@ -2,9 +2,9 @@
 // Due to anura's filesystem only being available once an anura instance is running,
 // we need a temporary filesystem to store files that are requested for caching.
 // As the anura filesystem is a wrapper around Filer, we can use default Filer here.
-importScripts("/AnuraOS/libs/filer/filer.min.js");
-importScripts("/AnuraOS/lib/api/filesystem/Filesystem.js");
-importScripts("/AnuraOS/lib/api/filesystem/LocalFS.js");
+importScripts("/libs/filer/filer.min.js");
+importScripts("/lib/api/filesystem/Filesystem.js");
+importScripts("/lib/api/filesystem/LocalFS.js");
 
 self.Buffer = Filer.Buffer;
 const filerfs = new Filer.FileSystem({
@@ -16,24 +16,20 @@ const filersh = new filerfs.Shell();
 let opfs = undefined;
 let opfssh = undefined;
 
-const bootStrapFSReady = new Promise((resolve) => {
+const bootStrapFSReady = new Promise((res, rej) => {
+	console.log(globalThis);
 	globalThis.idbKeyval
 		.get("bootFromOPFS")
-		.then(async (bootFromOPFS) => {
-			if (bootFromOPFS) {
-				try {
-					opfs = await LocalFS.newRootOPFS();
-					globalThis.anura = { fs: opfs }; // Stupid thing for AFSShell compat
-					opfssh = new AFSShell();
-				} catch (error) {
-					console.warn("Unable to mount OPFS in the service worker; falling back to Filer.", error);
-				}
+		.then(async (res) => {
+			if (res) {
+				opfs = await LocalFS.newRootOPFS();
+				globalThis.anura = { fs: opfs }; // Stupid thing for AFSShell compat
+				opfssh = new AFSShell();
 			}
-			resolve(true);
+			res(true);
 		})
-		.catch((error) => {
-			console.warn("Unable to read the OPFS boot setting; falling back to Filer.", error);
-			resolve(true);
+		.catch((e) => {
+			res(true);
 		});
 });
 

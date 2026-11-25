@@ -1018,10 +1018,10 @@ __webpack_require__.d(__webpack_exports__, {
 });
 var __webpack_modules__ = ({
 "./packages/scramjet/packages/core/src/client sync recursive ^\\.\\/.*$": 
-/*!****************************************************************************************************************!*\
-  !*** /home/raychu/anuraOS/external/anura-browserjs/packages/scramjet/packages/core/src/client|sync|/^\.\/.*$/ ***!
-  \****************************************************************************************************************/
-(function (module, __unused_webpack_exports, __nested_webpack_require_502_521__) {
+/*!*****************************************************************************************************************************!*\
+  !*** /home/raychu/AnuraOS-static-build/external/anura-browserjs/packages/scramjet/packages/core/src/client|sync|/^\.\/.*$/ ***!
+  \*****************************************************************************************************************************/
+(function (module, __unused_webpack_exports, __nested_webpack_require_541_560__) {
 var map = {
   "./": "./packages/scramjet/packages/core/src/client/index.ts",
   "./client": "./packages/scramjet/packages/core/src/client/client.ts",
@@ -1117,10 +1117,10 @@ var map = {
 
 function webpackContext(req) {
   var id = webpackContextResolve(req);
-  return __nested_webpack_require_502_521__(id);
+  return __nested_webpack_require_541_560__(id);
 }
 function webpackContextResolve(req) {
-  if(!__nested_webpack_require_502_521__.o(map, req)) {
+  if(!__nested_webpack_require_541_560__.o(map, req)) {
     var e = new Error("Cannot find module '" + req + "'");
     e.code = 'MODULE_NOT_FOUND';
     throw e;
@@ -1140,14 +1140,14 @@ webpackContext.id = "./packages/scramjet/packages/core/src/client sync recursive
 /*!****************************************************!*\
   !*** ./packages/scramjet/packages/core/src/Tap.ts ***!
   \****************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_9157_9176__) {
-__nested_webpack_require_9157_9176__.r(__nested_webpack_exports__);
-__nested_webpack_require_9157_9176__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_9196_9215__) {
+__nested_webpack_require_9196_9215__.r(__nested_webpack_exports__);
+__nested_webpack_require_9196_9215__.d(__nested_webpack_exports__, {
   Plugin: () => (Plugin),
   Tap: () => (Tap)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_9157_9176__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_9157_9176__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_9196_9215__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_9196_9215__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 function mergeTapOrder(plugin, order) {
     return {
@@ -1267,24 +1267,24 @@ class Tap {
 /*!**************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/client.ts ***!
   \**************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_13547_13566__) {
-__nested_webpack_require_13547_13566__.r(__nested_webpack_exports__);
-__nested_webpack_require_13547_13566__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_13586_13605__) {
+__nested_webpack_require_13586_13605__.r(__nested_webpack_exports__);
+__nested_webpack_require_13586_13605__.d(__nested_webpack_exports__, {
   ScramjetClient: () => (ScramjetClient)
 });
-/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_13547_13566__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_13547_13566__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _client_helpers__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_13547_13566__(/*! @client/helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
-/* ESM import */var _client_location__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_13547_13566__(/*! @client/location */ "./packages/scramjet/packages/core/src/client/location.ts");
-/* ESM import */var _client_shared_wrap__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_13547_13566__(/*! @client/shared/wrap */ "./packages/scramjet/packages/core/src/client/shared/wrap.ts");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_13547_13566__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_13547_13566__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _entry__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_13547_13566__(/*! ./entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _singletonbox__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_13547_13566__(/*! ./singletonbox */ "./packages/scramjet/packages/core/src/client/singletonbox.ts");
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_13547_13566__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_10__ = __nested_webpack_require_13547_13566__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _shared_eval__WEBPACK_IMPORTED_MODULE_11__ = __nested_webpack_require_13547_13566__(/*! ./shared/eval */ "./packages/scramjet/packages/core/src/client/shared/eval.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_13547_13566__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_13586_13605__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_13586_13605__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _client_helpers__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_13586_13605__(/*! @client/helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
+/* ESM import */var _client_location__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_13586_13605__(/*! @client/location */ "./packages/scramjet/packages/core/src/client/location.ts");
+/* ESM import */var _client_shared_wrap__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_13586_13605__(/*! @client/shared/wrap */ "./packages/scramjet/packages/core/src/client/shared/wrap.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_13586_13605__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_13586_13605__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _entry__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_13586_13605__(/*! ./entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _singletonbox__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_13586_13605__(/*! ./singletonbox */ "./packages/scramjet/packages/core/src/client/singletonbox.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_13586_13605__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_10__ = __nested_webpack_require_13586_13605__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_eval__WEBPACK_IMPORTED_MODULE_11__ = __nested_webpack_require_13586_13605__(/*! ./shared/eval */ "./packages/scramjet/packages/core/src/client/shared/eval.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_13586_13605__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 
 
@@ -1558,7 +1558,7 @@ class ScramjetClient {
         }
     }
     hook() {
-        const context = __nested_webpack_require_13547_13566__(/*! . */ "./packages/scramjet/packages/core/src/client sync recursive ^\\.\\/.*$");
+        const context = __nested_webpack_require_13586_13605__(/*! . */ "./packages/scramjet/packages/core/src/client sync recursive ^\\.\\/.*$");
         const modules = [];
         for (const key of context.keys()){
             const module = context(key);
@@ -1844,12 +1844,12 @@ return { apply, construct };
 /*!****************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/attr.ts ***!
   \****************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_40657_40676__) {
-__nested_webpack_require_40657_40676__.r(__nested_webpack_exports__);
-__nested_webpack_require_40657_40676__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_40696_40715__) {
+__nested_webpack_require_40696_40715__.r(__nested_webpack_exports__);
+__nested_webpack_require_40696_40715__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_40657_40676__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_40696_40715__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
     client.Trap("Element.prototype.attributes", {
@@ -1927,12 +1927,12 @@ __nested_webpack_require_40657_40676__.d(__nested_webpack_exports__, {
 /*!******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/beacon.ts ***!
   \******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_44835_44854__) {
-__nested_webpack_require_44835_44854__.r(__nested_webpack_exports__);
-__nested_webpack_require_44835_44854__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_44874_44893__) {
+__nested_webpack_require_44874_44893__.r(__nested_webpack_exports__);
+__nested_webpack_require_44874_44893__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_44835_44854__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_44874_44893__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
     client.Proxy("Navigator.prototype.sendBeacon", {
@@ -1949,9 +1949,9 @@ __nested_webpack_require_44835_44854__.d(__nested_webpack_exports__, {
 /*!******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/cookie.ts ***!
   \******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_45862_45881__) {
-__nested_webpack_require_45862_45881__.r(__nested_webpack_exports__);
-__nested_webpack_require_45862_45881__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_45901_45920__) {
+__nested_webpack_require_45901_45920__.r(__nested_webpack_exports__);
+__nested_webpack_require_45901_45920__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
@@ -1979,13 +1979,13 @@ __nested_webpack_require_45862_45881__.d(__nested_webpack_exports__, {
 /*!***************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/css.ts ***!
   \***************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_46935_46954__) {
-__nested_webpack_require_46935_46954__.r(__nested_webpack_exports__);
-__nested_webpack_require_46935_46954__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_46974_46993__) {
+__nested_webpack_require_46974_46993__.r(__nested_webpack_exports__);
+__nested_webpack_require_46974_46993__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_46935_46954__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_46935_46954__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_46974_46993__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_46974_46993__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
@@ -2079,14 +2079,14 @@ __nested_webpack_require_46935_46954__.d(__nested_webpack_exports__, {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/document.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_51792_51811__) {
-__nested_webpack_require_51792_51811__.r(__nested_webpack_exports__);
-__nested_webpack_require_51792_51811__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_51831_51850__) {
+__nested_webpack_require_51831_51850__.r(__nested_webpack_exports__);
+__nested_webpack_require_51831_51850__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_51792_51811__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_51792_51811__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _fetch_util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_51792_51811__(/*! @/fetch/util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
+/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_51831_51850__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_51831_51850__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _fetch_util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_51831_51850__(/*! @/fetch/util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
 
 
 
@@ -2200,22 +2200,22 @@ __nested_webpack_require_51792_51811__.d(__nested_webpack_exports__, {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/element.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_56589_56608__) {
-__nested_webpack_require_56589_56608__.r(__nested_webpack_exports__);
-__nested_webpack_require_56589_56608__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_56628_56647__) {
+__nested_webpack_require_56628_56647__.r(__nested_webpack_exports__);
+__nested_webpack_require_56628_56647__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   foreignContextForElement: () => (foreignContextForElement),
   insideForeignContext: () => (insideForeignContext)
 });
-/* ESM import */var _shared_htmlRules__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_56589_56608__(/*! @/shared/htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_56589_56608__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_56589_56608__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
-/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_56589_56608__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
-/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_56589_56608__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_56589_56608__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_56589_56608__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_56589_56608__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _shared_mime__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_56589_56608__(/*! @/shared/mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
+/* ESM import */var _shared_htmlRules__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_56628_56647__(/*! @/shared/htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_56628_56647__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_56628_56647__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
+/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_56628_56647__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_56628_56647__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_56628_56647__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_56628_56647__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_56628_56647__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _shared_mime__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_56628_56647__(/*! @/shared/mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
 
 
 
@@ -2790,12 +2790,12 @@ function collectAttributeMap(client, element, overrideName, overrideValue) {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/fontface.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_83745_83764__) {
-__nested_webpack_require_83745_83764__.r(__nested_webpack_exports__);
-__nested_webpack_require_83745_83764__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_83784_83803__) {
+__nested_webpack_require_83784_83803__.r(__nested_webpack_exports__);
+__nested_webpack_require_83784_83803__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_83745_83764__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_83784_83803__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
     client.Proxy("FontFace", {
@@ -2812,13 +2812,13 @@ __nested_webpack_require_83745_83764__.d(__nested_webpack_exports__, {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/fragments.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_84806_84825__) {
-__nested_webpack_require_84806_84825__.r(__nested_webpack_exports__);
-__nested_webpack_require_84806_84825__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_84845_84864__) {
+__nested_webpack_require_84845_84864__.r(__nested_webpack_exports__);
+__nested_webpack_require_84845_84864__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_84806_84825__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_84806_84825__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_84845_84864__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_84845_84864__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 // TODO: this function is untested / llm slop
@@ -2851,13 +2851,13 @@ function foreignContextForRange(client, range) {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/history.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_86764_86783__) {
-__nested_webpack_require_86764_86783__.r(__nested_webpack_exports__);
-__nested_webpack_require_86764_86783__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_86803_86822__) {
+__nested_webpack_require_86803_86822__.r(__nested_webpack_exports__);
+__nested_webpack_require_86803_86822__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_86764_86783__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_86764_86783__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_86803_86822__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_86803_86822__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
@@ -2892,13 +2892,13 @@ __nested_webpack_require_86764_86783__.d(__nested_webpack_exports__, {
 /*!****************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/open.ts ***!
   \****************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_88809_88828__) {
-__nested_webpack_require_88809_88828__.r(__nested_webpack_exports__);
-__nested_webpack_require_88809_88828__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_88848_88867__) {
+__nested_webpack_require_88848_88867__.r(__nested_webpack_exports__);
+__nested_webpack_require_88848_88867__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_88809_88828__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_88809_88828__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_88848_88867__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_88848_88867__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
@@ -2954,9 +2954,9 @@ __nested_webpack_require_88809_88828__.d(__nested_webpack_exports__, {
 /*!******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/origin.ts ***!
   \******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_91733_91752__) {
-__nested_webpack_require_91733_91752__.r(__nested_webpack_exports__);
-__nested_webpack_require_91733_91752__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_91772_91791__) {
+__nested_webpack_require_91772_91791__.r(__nested_webpack_exports__);
+__nested_webpack_require_91772_91791__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
@@ -2977,12 +2977,12 @@ __nested_webpack_require_91733_91752__.d(__nested_webpack_exports__, {
 /*!***********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/performance.ts ***!
   \***********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_92562_92581__) {
-__nested_webpack_require_92562_92581__.r(__nested_webpack_exports__);
-__nested_webpack_require_92562_92581__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_92601_92620__) {
+__nested_webpack_require_92601_92620__.r(__nested_webpack_exports__);
+__nested_webpack_require_92601_92620__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_92562_92581__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_92601_92620__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
     client.Trap("PerformanceEntry.prototype.name", {
@@ -3027,9 +3027,9 @@ __nested_webpack_require_92562_92581__.d(__nested_webpack_exports__, {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/protocol.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_94701_94720__) {
-__nested_webpack_require_94701_94720__.r(__nested_webpack_exports__);
-__nested_webpack_require_94701_94720__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_94740_94759__) {
+__nested_webpack_require_94740_94759__.r(__nested_webpack_exports__);
+__nested_webpack_require_94740_94759__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
@@ -3054,12 +3054,12 @@ __nested_webpack_require_94701_94720__.d(__nested_webpack_exports__, {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/dom/storage.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_95822_95841__) {
-__nested_webpack_require_95822_95841__.r(__nested_webpack_exports__);
-__nested_webpack_require_95822_95841__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_95861_95880__) {
+__nested_webpack_require_95861_95880__.r(__nested_webpack_exports__);
+__nested_webpack_require_95861_95880__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_95822_95841__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_95861_95880__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
     const handler = {
@@ -3140,9 +3140,9 @@ __nested_webpack_require_95822_95841__.d(__nested_webpack_exports__, {
 /*!*************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/entry.ts ***!
   \*************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_99827_99846__) {
-__nested_webpack_require_99827_99846__.r(__nested_webpack_exports__);
-__nested_webpack_require_99827_99846__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_99866_99885__) {
+__nested_webpack_require_99866_99885__.r(__nested_webpack_exports__);
+__nested_webpack_require_99866_99885__.d(__nested_webpack_exports__, {
   isdedicated: () => (isdedicated),
   isshared: () => (isshared),
   issw: () => (issw),
@@ -3162,8 +3162,8 @@ const isshared = "SharedWorkerGlobalScope" in globalThis;
 /*!**************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/events.ts ***!
   \**************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_100750_100769__) {
-__nested_webpack_require_100750_100769__.r(__nested_webpack_exports__);
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_100789_100808__) {
+__nested_webpack_require_100789_100808__.r(__nested_webpack_exports__);
 
 
 
@@ -3172,12 +3172,12 @@ __nested_webpack_require_100750_100769__.r(__nested_webpack_exports__);
 /*!***************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/helpers.ts ***!
   \***************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_101147_101166__) {
-__nested_webpack_require_101147_101166__.r(__nested_webpack_exports__);
-__nested_webpack_require_101147_101166__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_101186_101205__) {
+__nested_webpack_require_101186_101205__.r(__nested_webpack_exports__);
+__nested_webpack_require_101186_101205__.d(__nested_webpack_exports__, {
   getOwnPropertyDescriptorHandler: () => (getOwnPropertyDescriptorHandler)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_101147_101166__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_101186_101205__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 function getOwnPropertyDescriptorHandler(target, prop) {
     const realDescriptor = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.Object_getOwnPropertyDescriptor)(target, prop);
@@ -3190,9 +3190,9 @@ function getOwnPropertyDescriptorHandler(target, prop) {
 /*!*************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/index.ts ***!
   \*************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_102044_102063__) {
-__nested_webpack_require_102044_102063__.r(__nested_webpack_exports__);
-__nested_webpack_require_102044_102063__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_102083_102102__) {
+__nested_webpack_require_102083_102102__.r(__nested_webpack_exports__);
+__nested_webpack_require_102083_102102__.d(__nested_webpack_exports__, {
   ScramjetClient: () => (/* reexport safe */ _client__WEBPACK_IMPORTED_MODULE_0__.ScramjetClient),
   createLocationProxy: () => (/* reexport safe */ _location__WEBPACK_IMPORTED_MODULE_4__.createLocationProxy),
   getOwnPropertyDescriptorHandler: () => (/* reexport safe */ _helpers__WEBPACK_IMPORTED_MODULE_3__.getOwnPropertyDescriptorHandler),
@@ -3202,12 +3202,12 @@ __nested_webpack_require_102044_102063__.d(__nested_webpack_exports__, {
   iswindow: () => (/* reexport safe */ _entry__WEBPACK_IMPORTED_MODULE_1__.iswindow),
   isworker: () => (/* reexport safe */ _entry__WEBPACK_IMPORTED_MODULE_1__.isworker)
 });
-/* ESM import */var _client__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_102044_102063__(/*! ./client */ "./packages/scramjet/packages/core/src/client/client.ts");
-/* ESM import */var _entry__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_102044_102063__(/*! ./entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _events__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_102044_102063__(/*! ./events */ "./packages/scramjet/packages/core/src/client/events.ts");
-/* ESM import */var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_102044_102063__(/*! ./helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
-/* ESM import */var _location__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_102044_102063__(/*! ./location */ "./packages/scramjet/packages/core/src/client/location.ts");
-/* ESM import */var _index__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_102044_102063__(/*! ./index */ "./packages/scramjet/packages/core/src/client/index.ts");
+/* ESM import */var _client__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_102083_102102__(/*! ./client */ "./packages/scramjet/packages/core/src/client/client.ts");
+/* ESM import */var _entry__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_102083_102102__(/*! ./entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _events__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_102083_102102__(/*! ./events */ "./packages/scramjet/packages/core/src/client/events.ts");
+/* ESM import */var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_102083_102102__(/*! ./helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
+/* ESM import */var _location__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_102083_102102__(/*! ./location */ "./packages/scramjet/packages/core/src/client/location.ts");
+/* ESM import */var _index__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_102083_102102__(/*! ./index */ "./packages/scramjet/packages/core/src/client/index.ts");
 
 
 
@@ -3222,14 +3222,14 @@ __nested_webpack_require_102044_102063__.d(__nested_webpack_exports__, {
 /*!****************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/location.ts ***!
   \****************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_104198_104217__) {
-__nested_webpack_require_104198_104217__.r(__nested_webpack_exports__);
-__nested_webpack_require_104198_104217__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_104237_104256__) {
+__nested_webpack_require_104237_104256__.r(__nested_webpack_exports__);
+__nested_webpack_require_104237_104256__.d(__nested_webpack_exports__, {
   createLocationProxy: () => (createLocationProxy)
 });
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_104198_104217__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_104198_104217__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_104198_104217__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_104237_104256__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_104237_104256__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_104237_104256__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -3339,9 +3339,9 @@ function createLocationProxy(client, self) {
 /*!*******************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/antiantidebugger.ts ***!
   \*******************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_109133_109152__) {
-__nested_webpack_require_109133_109152__.r(__nested_webpack_exports__);
-__nested_webpack_require_109133_109152__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_109172_109191__) {
+__nested_webpack_require_109172_109191__.r(__nested_webpack_exports__);
+__nested_webpack_require_109172_109191__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
@@ -3368,13 +3368,13 @@ __nested_webpack_require_109133_109152__.d(__nested_webpack_exports__, {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/blob.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_110102_110121__) {
-__nested_webpack_require_110102_110121__.r(__nested_webpack_exports__);
-__nested_webpack_require_110102_110121__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_110141_110160__) {
+__nested_webpack_require_110141_110160__.r(__nested_webpack_exports__);
+__nested_webpack_require_110141_110160__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_110102_110121__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_110102_110121__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_110141_110160__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_110141_110160__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
@@ -3414,12 +3414,12 @@ __nested_webpack_require_110102_110121__.d(__nested_webpack_exports__, {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/caches.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_112417_112436__) {
-__nested_webpack_require_112417_112436__.r(__nested_webpack_exports__);
-__nested_webpack_require_112417_112436__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_112456_112475__) {
+__nested_webpack_require_112456_112475__.r(__nested_webpack_exports__);
+__nested_webpack_require_112456_112475__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_112417_112436__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_112456_112475__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
     client.Proxy("CacheStorage.prototype.open", {
@@ -3452,12 +3452,12 @@ __nested_webpack_require_112417_112436__.d(__nested_webpack_exports__, {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/chrome.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_114043_114062__) {
-__nested_webpack_require_114043_114062__.r(__nested_webpack_exports__);
-__nested_webpack_require_114043_114062__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_114082_114101__) {
+__nested_webpack_require_114082_114101__.r(__nested_webpack_exports__);
+__nested_webpack_require_114082_114101__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_114043_114062__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_114082_114101__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
 // delete all chrome specific apis, or apis that are not supported by any browser other than chrome
 // these are not worth emulating and typically cause issues
 
@@ -3538,14 +3538,14 @@ __nested_webpack_require_114043_114062__.d(__nested_webpack_exports__, {
 /*!******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/err.ts ***!
   \******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_117448_117467__) {
-__nested_webpack_require_117448_117467__.r(__nested_webpack_exports__);
-__nested_webpack_require_117448_117467__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_117487_117506__) {
+__nested_webpack_require_117487_117506__.r(__nested_webpack_exports__);
+__nested_webpack_require_117487_117506__.d(__nested_webpack_exports__, {
   argdbg: () => (argdbg),
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   enabled: () => (enabled)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_117448_117467__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_117487_117506__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 const enabled = (client)=>client.flagEnabled("captureErrors");
 function argdbg(arg, recurse = []) {
@@ -3593,13 +3593,13 @@ function argdbg(arg, recurse = []) {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/error.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_119676_119695__) {
-__nested_webpack_require_119676_119695__.r(__nested_webpack_exports__);
-__nested_webpack_require_119676_119695__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_119715_119734__) {
+__nested_webpack_require_119715_119734__.r(__nested_webpack_exports__);
+__nested_webpack_require_119715_119734__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   enabled: () => (enabled)
 });
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_119676_119695__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_119715_119734__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
 
 const enabled = (client)=>client.flagEnabled("cleanErrors");
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
@@ -3641,14 +3641,14 @@ const enabled = (client)=>client.flagEnabled("cleanErrors");
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/eval.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_121825_121844__) {
-__nested_webpack_require_121825_121844__.r(__nested_webpack_exports__);
-__nested_webpack_require_121825_121844__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_121864_121883__) {
+__nested_webpack_require_121864_121883__.r(__nested_webpack_exports__);
+__nested_webpack_require_121864_121883__.d(__nested_webpack_exports__, {
   createIndirectEval: () => (createIndirectEval),
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_121825_121844__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_121825_121844__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_121864_121883__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_121864_121883__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
@@ -3689,14 +3689,14 @@ function createIndirectEval(client) {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/event.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_124518_124537__) {
-__nested_webpack_require_124518_124537__.r(__nested_webpack_exports__);
-__nested_webpack_require_124518_124537__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_124557_124576__) {
+__nested_webpack_require_124557_124576__.r(__nested_webpack_exports__);
+__nested_webpack_require_124557_124576__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_124518_124537__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _client_helpers__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_124518_124537__(/*! @client/helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_124518_124537__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_124557_124576__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _client_helpers__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_124557_124576__(/*! @client/helpers */ "./packages/scramjet/packages/core/src/client/helpers.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_124557_124576__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -3863,12 +3863,12 @@ const realOnEvent = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_2__.Symbol_for)
 /*!***********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/function.ts ***!
   \***********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_132623_132642__) {
-__nested_webpack_require_132623_132642__.r(__nested_webpack_exports__);
-__nested_webpack_require_132623_132642__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_132662_132681__) {
+__nested_webpack_require_132662_132681__.r(__nested_webpack_exports__);
+__nested_webpack_require_132662_132681__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_132623_132642__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_132662_132681__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
 
 function rewriteFunction(ctx, client) {
     const stringifiedFunction = ctx.call().toString();
@@ -3903,12 +3903,12 @@ function rewriteFunction(ctx, client) {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/import.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_134852_134871__) {
-__nested_webpack_require_134852_134871__.r(__nested_webpack_exports__);
-__nested_webpack_require_134852_134871__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_134891_134910__) {
+__nested_webpack_require_134891_134910__.r(__nested_webpack_exports__);
+__nested_webpack_require_134891_134910__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_134852_134871__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_134891_134910__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
     const boundimport = client.natives.call("Function", null, "url", "return import(url)");
@@ -3949,12 +3949,12 @@ __nested_webpack_require_134852_134871__.d(__nested_webpack_exports__, {
 /*!************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/indexeddb.ts ***!
   \************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_136977_136996__) {
-__nested_webpack_require_136977_136996__.r(__nested_webpack_exports__);
-__nested_webpack_require_136977_136996__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_137016_137035__) {
+__nested_webpack_require_137016_137035__.r(__nested_webpack_exports__);
+__nested_webpack_require_137016_137035__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_136977_136996__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_137016_137035__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
     client.Proxy("IDBFactory.prototype.open", {
@@ -3976,12 +3976,12 @@ __nested_webpack_require_136977_136996__.d(__nested_webpack_exports__, {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/opfs.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_138154_138173__) {
-__nested_webpack_require_138154_138173__.r(__nested_webpack_exports__);
-__nested_webpack_require_138154_138173__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_138193_138212__) {
+__nested_webpack_require_138193_138212__.r(__nested_webpack_exports__);
+__nested_webpack_require_138193_138212__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_138154_138173__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_138193_138212__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
     client.Proxy("StorageManager.prototype.getDirectory", {
@@ -4008,15 +4008,15 @@ __nested_webpack_require_138154_138173__.d(__nested_webpack_exports__, {
 /*!**************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/postmessage.ts ***!
   \**************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_139614_139633__) {
-__nested_webpack_require_139614_139633__.r(__nested_webpack_exports__);
-__nested_webpack_require_139614_139633__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_139653_139672__) {
+__nested_webpack_require_139653_139672__.r(__nested_webpack_exports__);
+__nested_webpack_require_139653_139672__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_139614_139633__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_139614_139633__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_139614_139633__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _realm__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_139614_139633__(/*! ./realm */ "./packages/scramjet/packages/core/src/client/shared/realm.ts");
+/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_139653_139672__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_139653_139672__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_139653_139672__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _realm__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_139653_139672__(/*! ./realm */ "./packages/scramjet/packages/core/src/client/shared/realm.ts");
 
 
 
@@ -4112,13 +4112,13 @@ __nested_webpack_require_139614_139633__.d(__nested_webpack_exports__, {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/realm.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_145757_145776__) {
-__nested_webpack_require_145757_145776__.r(__nested_webpack_exports__);
-__nested_webpack_require_145757_145776__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_145796_145815__) {
+__nested_webpack_require_145796_145815__.r(__nested_webpack_exports__);
+__nested_webpack_require_145796_145815__.d(__nested_webpack_exports__, {
   POLLUTANT: () => (POLLUTANT),
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_145757_145776__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_145796_145815__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 const POLLUTANT = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.Symbol_for)("scramjet realm pollutant");
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
@@ -4148,12 +4148,12 @@ const POLLUTANT = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.Symbol_for)("
 /*!***********************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/requests/eventsource.ts ***!
   \***********************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_147502_147521__) {
-__nested_webpack_require_147502_147521__.r(__nested_webpack_exports__);
-__nested_webpack_require_147502_147521__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_147541_147560__) {
+__nested_webpack_require_147541_147560__.r(__nested_webpack_exports__);
+__nested_webpack_require_147541_147560__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_147502_147521__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_147541_147560__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
     client.Proxy("EventSource", {
@@ -4175,13 +4175,13 @@ __nested_webpack_require_147502_147521__.d(__nested_webpack_exports__, {
 /*!*****************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/requests/fetch.ts ***!
   \*****************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_148687_148706__) {
-__nested_webpack_require_148687_148706__.r(__nested_webpack_exports__);
-__nested_webpack_require_148687_148706__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_148726_148745__) {
+__nested_webpack_require_148726_148745__.r(__nested_webpack_exports__);
+__nested_webpack_require_148726_148745__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _xmlhttprequest__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_148687_148706__(/*! ./xmlhttprequest */ "./packages/scramjet/packages/core/src/client/shared/requests/xmlhttprequest.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_148687_148706__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _xmlhttprequest__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_148726_148745__(/*! ./xmlhttprequest */ "./packages/scramjet/packages/core/src/client/shared/requests/xmlhttprequest.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_148726_148745__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /**
@@ -4244,12 +4244,12 @@ __nested_webpack_require_148687_148706__.d(__nested_webpack_exports__, {
 /*!*********************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/requests/websocket.ts ***!
   \*********************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_151902_151921__) {
-__nested_webpack_require_151902_151921__.r(__nested_webpack_exports__);
-__nested_webpack_require_151902_151921__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_151941_151960__) {
+__nested_webpack_require_151941_151960__.r(__nested_webpack_exports__);
+__nested_webpack_require_151941_151960__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_151902_151921__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_151941_151960__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
     const socketmap = new _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__._WeakMap();
@@ -4575,13 +4575,13 @@ __nested_webpack_require_151902_151921__.d(__nested_webpack_exports__, {
 /*!**************************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/requests/xmlhttprequest.ts ***!
   \**************************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_165004_165023__) {
-__nested_webpack_require_165004_165023__.r(__nested_webpack_exports__);
-__nested_webpack_require_165004_165023__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_165043_165062__) {
+__nested_webpack_require_165043_165062__.r(__nested_webpack_exports__);
+__nested_webpack_require_165043_165062__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   unrewriteLinkHeader: () => (unrewriteLinkHeader)
 });
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_165004_165023__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_165043_165062__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
     let worker;
@@ -4718,13 +4718,13 @@ function unrewriteLinkHeader(header, context) {
 /*!*************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/settimeout.ts ***!
   \*************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_171100_171119__) {
-__nested_webpack_require_171100_171119__.r(__nested_webpack_exports__);
-__nested_webpack_require_171100_171119__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_171139_171158__) {
+__nested_webpack_require_171139_171158__.r(__nested_webpack_exports__);
+__nested_webpack_require_171139_171158__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_171100_171119__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_171100_171119__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_171139_171158__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_171139_171158__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, self) {
@@ -4748,14 +4748,14 @@ __nested_webpack_require_171100_171119__.d(__nested_webpack_exports__, {
 /*!*************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/sourcemaps.ts ***!
   \*************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_172620_172639__) {
-__nested_webpack_require_172620_172639__.r(__nested_webpack_exports__);
-__nested_webpack_require_172620_172639__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_172659_172678__) {
+__nested_webpack_require_172659_172678__.r(__nested_webpack_exports__);
+__nested_webpack_require_172659_172678__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   enabled: () => (enabled)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_172620_172639__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_172620_172639__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_172659_172678__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_172659_172678__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 var RewriteType = /*#__PURE__*/ function(RewriteType) {
     RewriteType[RewriteType["Insert"] = 0] = "Insert";
@@ -4911,9 +4911,9 @@ const enabled = (client)=>client.flagEnabled("sourcemaps");
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/worker.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_179027_179046__) {
-__nested_webpack_require_179027_179046__.r(__nested_webpack_exports__);
-__nested_webpack_require_179027_179046__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_179066_179085__) {
+__nested_webpack_require_179066_179085__.r(__nested_webpack_exports__);
+__nested_webpack_require_179066_179085__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client, _self) {
@@ -4982,16 +4982,16 @@ __nested_webpack_require_179027_179046__.d(__nested_webpack_exports__, {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/shared/wrap.ts ***!
   \*******************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_181605_181624__) {
-__nested_webpack_require_181605_181624__.r(__nested_webpack_exports__);
-__nested_webpack_require_181605_181624__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_181644_181663__) {
+__nested_webpack_require_181644_181663__.r(__nested_webpack_exports__);
+__nested_webpack_require_181644_181663__.d(__nested_webpack_exports__, {
   createWrapFn: () => (createWrapFn),
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__),
   order: () => (order)
 });
-/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_181605_181624__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_181605_181624__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_181605_181624__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _client_entry__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_181644_181663__(/*! @client/entry */ "./packages/scramjet/packages/core/src/client/entry.ts");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_181644_181663__(/*! @/symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_181644_181663__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 // import { argdbg } from "@client/shared/err";
@@ -5155,13 +5155,13 @@ const order = 4;
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/singletonbox.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_188895_188914__) {
-__nested_webpack_require_188895_188914__.r(__nested_webpack_exports__);
-__nested_webpack_require_188895_188914__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_188934_188953__) {
+__nested_webpack_require_188934_188953__.r(__nested_webpack_exports__);
+__nested_webpack_require_188934_188953__.d(__nested_webpack_exports__, {
   SingletonBox: () => (SingletonBox)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_188895_188914__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_188895_188914__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_188934_188953__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_188934_188953__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 class SingletonBox {
     ownerclient;
@@ -5211,12 +5211,12 @@ class SingletonBox {
 /*!****************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/client/worker/importScripts.ts ***!
   \****************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_191197_191216__) {
-__nested_webpack_require_191197_191216__.r(__nested_webpack_exports__);
-__nested_webpack_require_191197_191216__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_191236_191255__) {
+__nested_webpack_require_191236_191255__.r(__nested_webpack_exports__);
+__nested_webpack_require_191236_191255__.d(__nested_webpack_exports__, {
   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_191197_191216__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_191236_191255__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 /* ESM default export */ function __WEBPACK_DEFAULT_EXPORT__(client) {
     client.Proxy("importScripts", {
@@ -5235,14 +5235,14 @@ __nested_webpack_require_191197_191216__.d(__nested_webpack_exports__, {
 /*!***********************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/body.ts ***!
   \***********************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_192232_192251__) {
-__nested_webpack_require_192232_192251__.r(__nested_webpack_exports__);
-__nested_webpack_require_192232_192251__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_192271_192290__) {
+__nested_webpack_require_192271_192290__.r(__nested_webpack_exports__);
+__nested_webpack_require_192271_192290__.d(__nested_webpack_exports__, {
   rewriteBody: () => (rewriteBody)
 });
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_192232_192251__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _shared_sniffEncoding__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_192232_192251__(/*! @/shared/sniffEncoding */ "./packages/scramjet/packages/core/src/shared/sniffEncoding.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_192232_192251__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_192271_192290__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _shared_sniffEncoding__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_192271_192290__(/*! @/shared/sniffEncoding */ "./packages/scramjet/packages/core/src/shared/sniffEncoding.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_192271_192290__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -5302,22 +5302,22 @@ async function rewriteBody(handler, request, parsed, response) {
 /*!************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/fetch.ts ***!
   \************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_196030_196049__) {
-__nested_webpack_require_196030_196049__.r(__nested_webpack_exports__);
-__nested_webpack_require_196030_196049__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_196069_196088__) {
+__nested_webpack_require_196069_196088__.r(__nested_webpack_exports__);
+__nested_webpack_require_196069_196088__.d(__nested_webpack_exports__, {
   doHandleFetch: () => (doHandleFetch),
   doNetworkFetch: () => (doNetworkFetch),
   registrableDomainForRedirect: () => (registrableDomainForRedirect)
 });
-/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_196030_196049__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_196030_196049__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _parse__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_196030_196049__(/*! ./parse */ "./packages/scramjet/packages/core/src/fetch/parse.ts");
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_196030_196049__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _util__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_196030_196049__(/*! ./util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
-/* ESM import */var _body__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_196030_196049__(/*! ./body */ "./packages/scramjet/packages/core/src/fetch/body.ts");
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_196030_196049__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _headers__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_196030_196049__(/*! ./headers */ "./packages/scramjet/packages/core/src/fetch/headers.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_196030_196049__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_196069_196088__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_196069_196088__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _parse__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_196069_196088__(/*! ./parse */ "./packages/scramjet/packages/core/src/fetch/parse.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_196069_196088__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _util__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_196069_196088__(/*! ./util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
+/* ESM import */var _body__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_196069_196088__(/*! ./body */ "./packages/scramjet/packages/core/src/fetch/body.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_196069_196088__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _headers__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_196069_196088__(/*! ./headers */ "./packages/scramjet/packages/core/src/fetch/headers.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_196069_196088__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -5533,17 +5533,17 @@ async function handleCookies(handler, request, parsed, rawHeaders) {
 /*!**************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/headers.ts ***!
   \**************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_208032_208051__) {
-__nested_webpack_require_208032_208051__.r(__nested_webpack_exports__);
-__nested_webpack_require_208032_208051__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_208071_208090__) {
+__nested_webpack_require_208071_208090__.r(__nested_webpack_exports__);
+__nested_webpack_require_208071_208090__.d(__nested_webpack_exports__, {
   computeFetchSite: () => (computeFetchSite),
   rewriteRequestHeaders: () => (rewriteRequestHeaders),
   rewriteResponseHeaders: () => (rewriteResponseHeaders),
   worstFetchSite: () => (worstFetchSite)
 });
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_208032_208051__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_208032_208051__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_208032_208051__(/*! ./util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_208071_208090__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_208071_208090__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _util__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_208071_208090__(/*! ./util */ "./packages/scramjet/packages/core/src/fetch/util.ts");
 
 
 
@@ -5926,16 +5926,16 @@ function isLoopbackHost(hostname) {
 /*!************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/index.ts ***!
   \************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_227652_227671__) {
-__nested_webpack_require_227652_227671__.r(__nested_webpack_exports__);
-__nested_webpack_require_227652_227671__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_227691_227710__) {
+__nested_webpack_require_227691_227710__.r(__nested_webpack_exports__);
+__nested_webpack_require_227691_227710__.d(__nested_webpack_exports__, {
   ScramjetFetchHandler: () => (ScramjetFetchHandler),
   ScramjetFetchTrackedClient: () => (ScramjetFetchTrackedClient)
 });
-/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_227652_227671__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_227652_227671__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _fetch__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_227652_227671__(/*! ./fetch */ "./packages/scramjet/packages/core/src/fetch/fetch.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_227652_227671__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_227691_227710__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_227691_227710__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _fetch__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_227691_227710__(/*! ./fetch */ "./packages/scramjet/packages/core/src/fetch/fetch.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_227691_227710__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -5986,17 +5986,17 @@ class ScramjetFetchHandler extends EventTarget {
 /*!************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/parse.ts ***!
   \************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_230225_230244__) {
-__nested_webpack_require_230225_230244__.r(__nested_webpack_exports__);
-__nested_webpack_require_230225_230244__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_230264_230283__) {
+__nested_webpack_require_230264_230283__.r(__nested_webpack_exports__);
+__nested_webpack_require_230264_230283__.d(__nested_webpack_exports__, {
   QP: () => (QP),
   parseQueryParams: () => (parseQueryParams),
   parseRequest: () => (parseRequest)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_230225_230244__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_230225_230244__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var ___WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_230225_230244__(/*! . */ "./packages/scramjet/packages/core/src/fetch/index.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_230225_230244__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_230264_230283__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_230264_230283__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var ___WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_230264_230283__(/*! . */ "./packages/scramjet/packages/core/src/fetch/index.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_230264_230283__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 
 
@@ -6112,15 +6112,15 @@ function parseRequest(request, handler) {
 /*!***********************************************************!*\
   !*** ./packages/scramjet/packages/core/src/fetch/util.ts ***!
   \***********************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_235721_235740__) {
-__nested_webpack_require_235721_235740__.r(__nested_webpack_exports__);
-__nested_webpack_require_235721_235740__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_235760_235779__) {
+__nested_webpack_require_235760_235779__.r(__nested_webpack_exports__);
+__nested_webpack_require_235760_235779__.d(__nested_webpack_exports__, {
   createReferrerString: () => (createReferrerString),
   isDocument: () => (isDocument),
   isRedirect: () => (isRedirect),
   normalizeContentType: () => (normalizeContentType)
 });
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_235721_235740__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_235760_235779__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
 
 function normalizeContentType(parsed, headers) {
     if (!isDocument(parsed)) return;
@@ -6188,12 +6188,12 @@ function createReferrerString(clientUrl, resource, policy) {
 /*!****************************************************!*\
   !*** ./packages/scramjet/packages/core/src/log.ts ***!
   \****************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_238890_238909__) {
-__nested_webpack_require_238890_238909__.r(__nested_webpack_exports__);
-__nested_webpack_require_238890_238909__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_238929_238948__) {
+__nested_webpack_require_238929_238948__.r(__nested_webpack_exports__);
+__nested_webpack_require_238929_238948__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_238890_238909__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_238929_238948__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 // import { flagEnabled } from "@/shared";
 
 const logfuncs = {
@@ -6298,13 +6298,13 @@ const logfuncs = {
 /*!**************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/cookie.ts ***!
   \**************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_242939_242958__) {
-__nested_webpack_require_242939_242958__.r(__nested_webpack_exports__);
-__nested_webpack_require_242939_242958__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_242978_242997__) {
+__nested_webpack_require_242978_242997__.r(__nested_webpack_exports__);
+__nested_webpack_require_242978_242997__.d(__nested_webpack_exports__, {
   CookieJar: () => (CookieJar)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_242939_242958__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _set_cookie_parser__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_242939_242958__(/*! ./set-cookie-parser */ "./packages/scramjet/packages/core/src/shared/set-cookie-parser.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_242978_242997__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _set_cookie_parser__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_242978_242997__(/*! ./set-cookie-parser */ "./packages/scramjet/packages/core/src/shared/set-cookie-parser.ts");
 // thnank you node unblocker guy
 
 
@@ -6466,9 +6466,9 @@ class CookieJar {
 /*!***************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/headers.ts ***!
   \***************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_250386_250405__) {
-__nested_webpack_require_250386_250405__.r(__nested_webpack_exports__);
-__nested_webpack_require_250386_250405__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_250425_250444__) {
+__nested_webpack_require_250425_250444__.r(__nested_webpack_exports__);
+__nested_webpack_require_250425_250444__.d(__nested_webpack_exports__, {
   ScramjetHeaders: () => (ScramjetHeaders)
 });
 class ScramjetHeaders {
@@ -6540,15 +6540,15 @@ class ScramjetHeaders {
 /*!*****************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/htmlRules.ts ***!
   \*****************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_252403_252422__) {
-__nested_webpack_require_252403_252422__.r(__nested_webpack_exports__);
-__nested_webpack_require_252403_252422__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_252442_252461__) {
+__nested_webpack_require_252442_252461__.r(__nested_webpack_exports__);
+__nested_webpack_require_252442_252461__.d(__nested_webpack_exports__, {
   htmlRules: () => (htmlRules)
 });
-/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_252403_252422__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
-/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_252403_252422__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_252403_252422__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_252403_252422__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_252442_252461__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _rewriters_html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_252442_252461__(/*! @rewriters/html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_252442_252461__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_252442_252461__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 
@@ -6735,9 +6735,9 @@ const htmlRules = [
 /*!*************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/index.ts ***!
   \*************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_258404_258423__) {
-__nested_webpack_require_258404_258423__.r(__nested_webpack_exports__);
-__nested_webpack_require_258404_258423__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_258443_258462__) {
+__nested_webpack_require_258443_258462__.r(__nested_webpack_exports__);
+__nested_webpack_require_258443_258462__.d(__nested_webpack_exports__, {
   CookieJar: () => (/* reexport safe */ _cookie__WEBPACK_IMPORTED_MODULE_1__.CookieJar),
   IncrementalHtmlRewriter: () => (/* reexport safe */ _rewriters__WEBPACK_IMPORTED_MODULE_5__.IncrementalHtmlRewriter),
   ScramjetHeaders: () => (/* reexport safe */ _headers__WEBPACK_IMPORTED_MODULE_2__.ScramjetHeaders),
@@ -6773,12 +6773,12 @@ __nested_webpack_require_258404_258423__.d(__nested_webpack_exports__, {
   unrewriteHtml: () => (/* reexport safe */ _rewriters__WEBPACK_IMPORTED_MODULE_5__.unrewriteHtml),
   unrewriteUrl: () => (/* reexport safe */ _rewriters__WEBPACK_IMPORTED_MODULE_5__.unrewriteUrl)
 });
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_258404_258423__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _cookie__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_258404_258423__(/*! ./cookie */ "./packages/scramjet/packages/core/src/shared/cookie.ts");
-/* ESM import */var _headers__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_258404_258423__(/*! ./headers */ "./packages/scramjet/packages/core/src/shared/headers.ts");
-/* ESM import */var _htmlRules__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_258404_258423__(/*! ./htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
-/* ESM import */var _mime__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_258404_258423__(/*! ./mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
-/* ESM import */var _rewriters__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_258404_258423__(/*! ./rewriters */ "./packages/scramjet/packages/core/src/shared/rewriters/index.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_258443_258462__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _cookie__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_258443_258462__(/*! ./cookie */ "./packages/scramjet/packages/core/src/shared/cookie.ts");
+/* ESM import */var _headers__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_258443_258462__(/*! ./headers */ "./packages/scramjet/packages/core/src/shared/headers.ts");
+/* ESM import */var _htmlRules__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_258443_258462__(/*! ./htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
+/* ESM import */var _mime__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_258443_258462__(/*! ./mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
+/* ESM import */var _rewriters__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_258443_258462__(/*! ./rewriters */ "./packages/scramjet/packages/core/src/shared/rewriters/index.ts");
 
 
 
@@ -6802,9 +6802,9 @@ function flagEnabled(flag, context, url) {
 /*!************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/mime.ts ***!
   \************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_263569_263588__) {
-__nested_webpack_require_263569_263588__.r(__nested_webpack_exports__);
-__nested_webpack_require_263569_263588__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_263608_263627__) {
+__nested_webpack_require_263608_263627__.r(__nested_webpack_exports__);
+__nested_webpack_require_263608_263627__.d(__nested_webpack_exports__, {
   getScriptBlockTypeString: () => (getScriptBlockTypeString),
   isArchiveMimeType: () => (isArchiveMimeType),
   isAudioOrVideoMimeType: () => (isAudioOrVideoMimeType),
@@ -6821,7 +6821,7 @@ __nested_webpack_require_263569_263588__.d(__nested_webpack_exports__, {
   isZipBasedMimeType: () => (isZipBasedMimeType),
   parseMimeType: () => (parseMimeType)
 });
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_263569_263588__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_263608_263627__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 // WARNING: SLOP FILE
 // DO NOT TRUST THIS CODE
 
@@ -6996,12 +6996,12 @@ const JAVASCRIPT_ESSENCES = new _snapshot__WEBPACK_IMPORTED_MODULE_0__._Set([
 /*!***************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/refresh.ts ***!
   \***************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_271517_271536__) {
-__nested_webpack_require_271517_271536__.r(__nested_webpack_exports__);
-__nested_webpack_require_271517_271536__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_271556_271575__) {
+__nested_webpack_require_271556_271575__.r(__nested_webpack_exports__);
+__nested_webpack_require_271556_271575__.d(__nested_webpack_exports__, {
   parseDeclarativeRefresh: () => (parseDeclarativeRefresh)
 });
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_271517_271536__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_271556_271575__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 /**
  * this is vibe slop for parsing the content of a meta refresh element, which is a bit of a mess
  * @see https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element:the-declarative-refresh-syntax
@@ -7124,14 +7124,14 @@ function parseDeclarativeRefresh(input) {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/css.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_276116_276135__) {
-__nested_webpack_require_276116_276135__.r(__nested_webpack_exports__);
-__nested_webpack_require_276116_276135__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_276155_276174__) {
+__nested_webpack_require_276155_276174__.r(__nested_webpack_exports__);
+__nested_webpack_require_276155_276174__.d(__nested_webpack_exports__, {
   rewriteCss: () => (rewriteCss),
   unrewriteCss: () => (unrewriteCss)
 });
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_276116_276135__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_276116_276135__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_276155_276174__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_276155_276174__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 
 function rewriteCss(css, context, meta) {
@@ -7168,29 +7168,29 @@ function handleCss(type, css, context, meta) {
 /*!**********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/html.ts ***!
   \**********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_278668_278687__) {
-__nested_webpack_require_278668_278687__.r(__nested_webpack_exports__);
-__nested_webpack_require_278668_278687__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_278707_278726__) {
+__nested_webpack_require_278707_278726__.r(__nested_webpack_exports__);
+__nested_webpack_require_278707_278726__.d(__nested_webpack_exports__, {
   IncrementalHtmlRewriter: () => (IncrementalHtmlRewriter),
   rewriteHtml: () => (rewriteHtml),
   rewriteSrcset: () => (rewriteSrcset),
   unrewriteHtml: () => (unrewriteHtml)
 });
-/* ESM import */var htmlparser2__WEBPACK_IMPORTED_MODULE_12__ = __nested_webpack_require_278668_278687__(/*! htmlparser2 */ "./node_modules/.pnpm/domelementtype@3.0.0/node_modules/domelementtype/dist/index.js");
-/* ESM import */var htmlparser2__WEBPACK_IMPORTED_MODULE_13__ = __nested_webpack_require_278668_278687__(/*! htmlparser2 */ "./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Parser.js");
-/* ESM import */var domhandler__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_278668_278687__(/*! domhandler */ "./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/index.js");
-/* ESM import */var dom_serializer__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_278668_278687__(/*! dom-serializer */ "./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/index.js");
-/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_278668_278687__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_278668_278687__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_278668_278687__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _shared_htmlRules__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_278668_278687__(/*! @/shared/htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
-/* ESM import */var _shared_refresh__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_278668_278687__(/*! @/shared/refresh */ "./packages/scramjet/packages/core/src/shared/refresh.ts");
-/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_278668_278687__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_278668_278687__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_278668_278687__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var ___WEBPACK_IMPORTED_MODULE_10__ = __nested_webpack_require_278668_278687__(/*! .. */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _shared_mime__WEBPACK_IMPORTED_MODULE_11__ = __nested_webpack_require_278668_278687__(/*! @/shared/mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_278668_278687__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var htmlparser2__WEBPACK_IMPORTED_MODULE_12__ = __nested_webpack_require_278707_278726__(/*! htmlparser2 */ "./node_modules/.pnpm/domelementtype@3.0.0/node_modules/domelementtype/dist/index.js");
+/* ESM import */var htmlparser2__WEBPACK_IMPORTED_MODULE_13__ = __nested_webpack_require_278707_278726__(/*! htmlparser2 */ "./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Parser.js");
+/* ESM import */var domhandler__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_278707_278726__(/*! domhandler */ "./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/index.js");
+/* ESM import */var dom_serializer__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_278707_278726__(/*! dom-serializer */ "./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/index.js");
+/* ESM import */var _rewriters_url__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_278707_278726__(/*! @rewriters/url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _rewriters_css__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_278707_278726__(/*! @rewriters/css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_278707_278726__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _shared_htmlRules__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_278707_278726__(/*! @/shared/htmlRules */ "./packages/scramjet/packages/core/src/shared/htmlRules.ts");
+/* ESM import */var _shared_refresh__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_278707_278726__(/*! @/shared/refresh */ "./packages/scramjet/packages/core/src/shared/refresh.ts");
+/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_278707_278726__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_278707_278726__(/*! @/Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_278707_278726__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var ___WEBPACK_IMPORTED_MODULE_10__ = __nested_webpack_require_278707_278726__(/*! .. */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _shared_mime__WEBPACK_IMPORTED_MODULE_11__ = __nested_webpack_require_278707_278726__(/*! @/shared/mime */ "./packages/scramjet/packages/core/src/shared/mime.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_278707_278726__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 
 
@@ -7619,9 +7619,9 @@ const eventAttributes = [
 /*!***********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/index.ts ***!
   \***********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_297825_297844__) {
-__nested_webpack_require_297825_297844__.r(__nested_webpack_exports__);
-__nested_webpack_require_297825_297844__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_297864_297883__) {
+__nested_webpack_require_297864_297883__.r(__nested_webpack_exports__);
+__nested_webpack_require_297864_297883__.d(__nested_webpack_exports__, {
   IncrementalHtmlRewriter: () => (/* reexport safe */ _html__WEBPACK_IMPORTED_MODULE_1__.IncrementalHtmlRewriter),
   getRewriter: () => (/* reexport safe */ _wasm__WEBPACK_IMPORTED_MODULE_5__.getRewriter),
   rewriteBlob: () => (/* reexport safe */ _url__WEBPACK_IMPORTED_MODULE_3__.rewriteBlob),
@@ -7638,12 +7638,12 @@ __nested_webpack_require_297825_297844__.d(__nested_webpack_exports__, {
   unrewriteHtml: () => (/* reexport safe */ _html__WEBPACK_IMPORTED_MODULE_1__.unrewriteHtml),
   unrewriteUrl: () => (/* reexport safe */ _url__WEBPACK_IMPORTED_MODULE_3__.unrewriteUrl)
 });
-/* ESM import */var _css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_297825_297844__(/*! ./css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
-/* ESM import */var _html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_297825_297844__(/*! ./html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
-/* ESM import */var _js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_297825_297844__(/*! ./js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _url__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_297825_297844__(/*! ./url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
-/* ESM import */var _worker__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_297825_297844__(/*! ./worker */ "./packages/scramjet/packages/core/src/shared/rewriters/worker.ts");
-/* ESM import */var _wasm__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_297825_297844__(/*! ./wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
+/* ESM import */var _css__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_297864_297883__(/*! ./css */ "./packages/scramjet/packages/core/src/shared/rewriters/css.ts");
+/* ESM import */var _html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_297864_297883__(/*! ./html */ "./packages/scramjet/packages/core/src/shared/rewriters/html.ts");
+/* ESM import */var _js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_297864_297883__(/*! ./js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _url__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_297864_297883__(/*! ./url */ "./packages/scramjet/packages/core/src/shared/rewriters/url.ts");
+/* ESM import */var _worker__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_297864_297883__(/*! ./worker */ "./packages/scramjet/packages/core/src/shared/rewriters/worker.ts");
+/* ESM import */var _wasm__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_297864_297883__(/*! ./wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
 
 
 
@@ -7657,16 +7657,16 @@ __nested_webpack_require_297825_297844__.d(__nested_webpack_exports__, {
 /*!********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/js.ts ***!
   \********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_300630_300649__) {
-__nested_webpack_require_300630_300649__.r(__nested_webpack_exports__);
-__nested_webpack_require_300630_300649__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_300669_300688__) {
+__nested_webpack_require_300669_300688__.r(__nested_webpack_exports__);
+__nested_webpack_require_300669_300688__.d(__nested_webpack_exports__, {
   rewriteJs: () => (rewriteJs),
   rewriteJsInner: () => (rewriteJsInner)
 });
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_300630_300649__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _rewriters_wasm__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_300630_300649__(/*! @rewriters/wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_300630_300649__(/*! ../snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_300630_300649__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_300669_300688__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _rewriters_wasm__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_300669_300688__(/*! @rewriters/wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_300669_300688__(/*! ../snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_300669_300688__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 
 
@@ -7765,18 +7765,18 @@ function rewriteJs(js, url, context, meta, isModule = false) {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/url.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_305876_305895__) {
-__nested_webpack_require_305876_305895__.r(__nested_webpack_exports__);
-__nested_webpack_require_305876_305895__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_305915_305934__) {
+__nested_webpack_require_305915_305934__.r(__nested_webpack_exports__);
+__nested_webpack_require_305915_305934__.d(__nested_webpack_exports__, {
   rewriteBlob: () => (rewriteBlob),
   rewriteUrl: () => (rewriteUrl),
   unrewriteBlob: () => (unrewriteBlob),
   unrewriteUrl: () => (unrewriteUrl)
 });
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_305876_305895__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _fetch_parse__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_305876_305895__(/*! @/fetch/parse */ "./packages/scramjet/packages/core/src/fetch/parse.ts");
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_305876_305895__(/*! ../snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_305876_305895__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_305915_305934__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _fetch_parse__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_305915_305934__(/*! @/fetch/parse */ "./packages/scramjet/packages/core/src/fetch/parse.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_305915_305934__(/*! ../snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_305915_305934__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 
 
 
@@ -7936,16 +7936,16 @@ function unrewriteUrl(url, context) {
 /*!**********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts ***!
   \**********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_314394_314413__) {
-__nested_webpack_require_314394_314413__.r(__nested_webpack_exports__);
-__nested_webpack_require_314394_314413__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_314433_314452__) {
+__nested_webpack_require_314433_314452__.r(__nested_webpack_exports__);
+__nested_webpack_require_314433_314452__.d(__nested_webpack_exports__, {
   getRewriter: () => (getRewriter),
   setWasm: () => (setWasm)
 });
-/* ESM import */var _rewriter_wasm_out_wasm_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_314394_314413__(/*! ../../../rewriter/wasm/out/wasm.js */ "./packages/scramjet/packages/core/rewriter/wasm/out/wasm.js");
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_314394_314413__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_314394_314413__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* provided dependency */ var dbg = __nested_webpack_require_314394_314413__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
+/* ESM import */var _rewriter_wasm_out_wasm_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_314433_314452__(/*! ../../../rewriter/wasm/out/wasm.js */ "./packages/scramjet/packages/core/rewriter/wasm/out/wasm.js");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_314433_314452__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_314433_314452__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* provided dependency */ var dbg = __nested_webpack_require_314433_314452__(/*! ./packages/scramjet/packages/core/src/log.ts */ "./packages/scramjet/packages/core/src/log.ts")["default"];
 // i am a cat. i like to be petted. i like to be fed. i like to be
 
 
@@ -7994,15 +7994,15 @@ function getRewriter(context, meta) {
 /*!************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/rewriters/worker.ts ***!
   \************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_317212_317231__) {
-__nested_webpack_require_317212_317231__.r(__nested_webpack_exports__);
-__nested_webpack_require_317212_317231__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_317251_317270__) {
+__nested_webpack_require_317251_317270__.r(__nested_webpack_exports__);
+__nested_webpack_require_317251_317270__.d(__nested_webpack_exports__, {
   rewriteWorkers: () => (rewriteWorkers)
 });
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_317212_317231__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_317212_317231__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_317212_317231__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_317212_317231__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_317251_317270__(/*! @/shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _rewriters_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_317251_317270__(/*! @rewriters/js */ "./packages/scramjet/packages/core/src/shared/rewriters/js.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_317251_317270__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_util__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_317251_317270__(/*! @/shared/util */ "./packages/scramjet/packages/core/src/shared/util.ts");
 
 
 
@@ -8036,9 +8036,9 @@ function rewriteWorkers(js, url, context, meta, isModule) {
 /*!*************************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/set-cookie-parser.ts ***!
   \*************************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_319451_319470__) {
-__nested_webpack_require_319451_319470__.r(__nested_webpack_exports__);
-__nested_webpack_require_319451_319470__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_319490_319509__) {
+__nested_webpack_require_319490_319509__.r(__nested_webpack_exports__);
+__nested_webpack_require_319490_319509__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
   parse: () => (parse),
   parseNameValuePair: () => (parseNameValuePair),
@@ -8200,9 +8200,9 @@ function splitCookiesString(cookiesString) {
 /*!****************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/snapshot.ts ***!
   \****************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_324724_324743__) {
-__nested_webpack_require_324724_324743__.r(__nested_webpack_exports__);
-__nested_webpack_require_324724_324743__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_324763_324782__) {
+__nested_webpack_require_324763_324782__.r(__nested_webpack_exports__);
+__nested_webpack_require_324763_324782__.d(__nested_webpack_exports__, {
   Array_from: () => (Array_from),
   Array_isArray: () => (Array_isArray),
   Array_of: () => (Array_of),
@@ -8361,9 +8361,9 @@ function makeWrap(source) {
 /*!*********************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/sniffEncoding.ts ***!
   \*********************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_332269_332288__) {
-__nested_webpack_require_332269_332288__.r(__nested_webpack_exports__);
-__nested_webpack_require_332269_332288__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_332308_332327__) {
+__nested_webpack_require_332308_332327__.r(__nested_webpack_exports__);
+__nested_webpack_require_332308_332327__.d(__nested_webpack_exports__, {
   bomSniff: () => (bomSniff),
   extractCharsetFromContentType: () => (extractCharsetFromContentType),
   extractCharsetFromMeta: () => (extractCharsetFromMeta),
@@ -8371,7 +8371,7 @@ __nested_webpack_require_332269_332288__.d(__nested_webpack_exports__, {
   prescanByteStream: () => (prescanByteStream),
   sniffEncoding: () => (sniffEncoding)
 });
-/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_332269_332288__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_332308_332327__(/*! ./snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 /**
  * WHATWG Encoding Sniffing Algorithm
  *
@@ -9210,13 +9210,13 @@ function isAsciiAlpha(byte) {
 /*!************************************************************!*\
   !*** ./packages/scramjet/packages/core/src/shared/util.ts ***!
   \************************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_362073_362092__) {
-__nested_webpack_require_362073_362092__.r(__nested_webpack_exports__);
-__nested_webpack_require_362073_362092__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_362112_362131__) {
+__nested_webpack_require_362112_362131__.r(__nested_webpack_exports__);
+__nested_webpack_require_362112_362131__.d(__nested_webpack_exports__, {
   base64Encode: () => (base64Encode),
   bytesToBase64: () => (bytesToBase64)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_362073_362092__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_362112_362131__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 
 function bytesToBase64Fallback(bytes) {
     const binString = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.Array_from)(bytes, (byte)=>(0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.String_fromCodePoint)(byte)).join("");
@@ -9234,13 +9234,13 @@ function base64Encode(text) {
 /*!********************************************************!*\
   !*** ./packages/scramjet/packages/core/src/symbols.ts ***!
   \********************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_363544_363563__) {
-__nested_webpack_require_363544_363563__.r(__nested_webpack_exports__);
-__nested_webpack_require_363544_363563__.d(__nested_webpack_exports__, {
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_363583_363602__) {
+__nested_webpack_require_363583_363602__.r(__nested_webpack_exports__);
+__nested_webpack_require_363583_363602__.d(__nested_webpack_exports__, {
   SCRAMJETCLIENT: () => (SCRAMJETCLIENT),
   SCRAMJETCLIENTNAME: () => (SCRAMJETCLIENTNAME)
 });
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_363544_363563__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_363583_363602__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
 /**
  * @fileoverview
  * See `types.ts` for context on these symbols.
@@ -9254,8 +9254,8 @@ const SCRAMJETCLIENT = (0,_shared_snapshot__WEBPACK_IMPORTED_MODULE_0__.Symbol_f
 /*!******************************************************!*\
   !*** ./packages/scramjet/packages/core/src/types.ts ***!
   \******************************************************/
-(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_364450_364469__) {
-__nested_webpack_require_364450_364469__.r(__nested_webpack_exports__);
+(function (__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_364489_364508__) {
+__nested_webpack_require_364489_364508__.r(__nested_webpack_exports__);
 /**
  * Version information for the current Scramjet build.
  * Contains both the semantic version string and the git commit hash for build identification.
@@ -9268,9 +9268,9 @@ __nested_webpack_require_364450_364469__.r(__nested_webpack_exports__);
 /*!**********************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs ***!
   \**********************************************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_365312_365331__) {
-__nested_webpack_require_365312_365331__.r(__nested_webpack_exports__);
-__nested_webpack_require_365312_365331__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_365351_365370__) {
+__nested_webpack_require_365351_365370__.r(__nested_webpack_exports__);
+__nested_webpack_require_365351_365370__.d(__nested_webpack_exports__, {
   BareCompatibleClient: () => (BareCompatibleClient),
   BareCompatibleWebSocket: () => (BareCompatibleWebSocket),
   BareResponse: () => (BareResponse)
@@ -9481,9 +9481,9 @@ class BareCompatibleClient {
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/foreignNames.js ***!
   \*****************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_373452_373471__) {
-__nested_webpack_require_373452_373471__.r(__nested_webpack_exports__);
-__nested_webpack_require_373452_373471__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_373491_373510__) {
+__nested_webpack_require_373491_373510__.r(__nested_webpack_exports__);
+__nested_webpack_require_373491_373510__.d(__nested_webpack_exports__, {
   attributeNames: () => (attributeNames),
   elementNames: () => (elementNames)
 });
@@ -9594,15 +9594,15 @@ const attributeNames = new Map([
 /*!**********************************************************************************************!*\
   !*** ./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/index.js ***!
   \**********************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_376145_376164__) {
-__nested_webpack_require_376145_376164__.r(__nested_webpack_exports__);
-__nested_webpack_require_376145_376164__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_376184_376203__) {
+__nested_webpack_require_376184_376203__.r(__nested_webpack_exports__);
+__nested_webpack_require_376184_376203__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
   render: () => (render)
 });
-/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_376145_376164__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
-/* ESM import */var entities__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_376145_376164__(/*! entities */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/index.js");
-/* ESM import */var _foreignNames_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_376145_376164__(/*! ./foreignNames.js */ "./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/foreignNames.js");
+/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_376184_376203__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
+/* ESM import */var entities__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_376184_376203__(/*! entities */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/index.js");
+/* ESM import */var _foreignNames_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_376184_376203__(/*! ./foreignNames.js */ "./node_modules/.pnpm/dom-serializer@2.0.0/node_modules/dom-serializer/lib/esm/foreignNames.js");
 /*
  * Module dependencies
  */
@@ -9800,9 +9800,9 @@ function renderComment(elem) {
 /*!**********************************************************************************************!*\
   !*** ./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js ***!
   \**********************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_383169_383188__) {
-__nested_webpack_require_383169_383188__.r(__nested_webpack_exports__);
-__nested_webpack_require_383169_383188__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_383208_383227__) {
+__nested_webpack_require_383208_383227__.r(__nested_webpack_exports__);
+__nested_webpack_require_383208_383227__.d(__nested_webpack_exports__, {
   CDATA: () => (CDATA),
   Comment: () => (Comment),
   Directive: () => (Directive),
@@ -9873,9 +9873,9 @@ const Doctype = ElementType.Doctype;
 /*!*******************************************************************************************!*\
   !*** ./node_modules/.pnpm/domelementtype@3.0.0/node_modules/domelementtype/dist/index.js ***!
   \*******************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_385658_385677__) {
-__nested_webpack_require_385658_385677__.r(__nested_webpack_exports__);
-__nested_webpack_require_385658_385677__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_385697_385716__) {
+__nested_webpack_require_385697_385716__.r(__nested_webpack_exports__);
+__nested_webpack_require_385697_385716__.d(__nested_webpack_exports__, {
   CDATA: () => (CDATA),
   Comment: () => (Comment),
   Directive: () => (Directive),
@@ -9955,9 +9955,9 @@ const Doctype = ElementType.Doctype;
 /*!**************************************************************************************!*\
   !*** ./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/index.js ***!
   \**************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_388637_388656__) {
-__nested_webpack_require_388637_388656__.r(__nested_webpack_exports__);
-__nested_webpack_require_388637_388656__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_388676_388695__) {
+__nested_webpack_require_388676_388695__.r(__nested_webpack_exports__);
+__nested_webpack_require_388676_388695__.d(__nested_webpack_exports__, {
   CDATA: () => (/* reexport safe */ _node_js__WEBPACK_IMPORTED_MODULE_1__.CDATA),
   Comment: () => (/* reexport safe */ _node_js__WEBPACK_IMPORTED_MODULE_1__.Comment),
   DataNode: () => (/* reexport safe */ _node_js__WEBPACK_IMPORTED_MODULE_1__.DataNode),
@@ -9978,8 +9978,8 @@ __nested_webpack_require_388637_388656__.d(__nested_webpack_exports__, {
   isTag: () => (/* reexport safe */ _node_js__WEBPACK_IMPORTED_MODULE_1__.isTag),
   isText: () => (/* reexport safe */ _node_js__WEBPACK_IMPORTED_MODULE_1__.isText)
 });
-/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_388637_388656__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
-/* ESM import */var _node_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_388637_388656__(/*! ./node.js */ "./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/node.js");
+/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_388676_388695__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
+/* ESM import */var _node_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_388676_388695__(/*! ./node.js */ "./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/node.js");
 
 
 
@@ -10133,9 +10133,9 @@ class DomHandler {
 /*!*************************************************************************************!*\
   !*** ./node_modules/.pnpm/domhandler@5.0.3/node_modules/domhandler/lib/esm/node.js ***!
   \*************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_396153_396172__) {
-__nested_webpack_require_396153_396172__.r(__nested_webpack_exports__);
-__nested_webpack_require_396153_396172__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_396192_396211__) {
+__nested_webpack_require_396192_396211__.r(__nested_webpack_exports__);
+__nested_webpack_require_396192_396211__.d(__nested_webpack_exports__, {
   CDATA: () => (CDATA),
   Comment: () => (Comment),
   DataNode: () => (DataNode),
@@ -10154,7 +10154,7 @@ __nested_webpack_require_396153_396172__.d(__nested_webpack_exports__, {
   isTag: () => (isTag),
   isText: () => (isText)
 });
-/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_396153_396172__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
+/* ESM import */var domelementtype__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_396192_396211__(/*! domelementtype */ "./node_modules/.pnpm/domelementtype@2.3.0/node_modules/domelementtype/lib/esm/index.js");
 
 /**
  * This object will be used as the prototype for Nodes when creating a
@@ -10500,9 +10500,9 @@ function cloneChildren(childs) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode.js ***!
   \***********************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_407069_407088__) {
-__nested_webpack_require_407069_407088__.r(__nested_webpack_exports__);
-__nested_webpack_require_407069_407088__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_407108_407127__) {
+__nested_webpack_require_407108_407127__.r(__nested_webpack_exports__);
+__nested_webpack_require_407108_407127__.d(__nested_webpack_exports__, {
   BinTrieFlags: () => (BinTrieFlags),
   DecodingMode: () => (DecodingMode),
   EntityDecoder: () => (EntityDecoder),
@@ -10517,9 +10517,9 @@ __nested_webpack_require_407069_407088__.d(__nested_webpack_exports__, {
   replaceCodePoint: () => (/* reexport safe */ _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_2__.replaceCodePoint),
   xmlDecodeTree: () => (/* reexport safe */ _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_1__["default"])
 });
-/* ESM import */var _generated_decode_data_html_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_407069_407088__(/*! ./generated/decode-data-html.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-html.js");
-/* ESM import */var _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_407069_407088__(/*! ./generated/decode-data-xml.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-xml.js");
-/* ESM import */var _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_407069_407088__(/*! ./decode_codepoint.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode_codepoint.js");
+/* ESM import */var _generated_decode_data_html_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_407108_407127__(/*! ./generated/decode-data-html.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-html.js");
+/* ESM import */var _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_407108_407127__(/*! ./generated/decode-data-xml.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-xml.js");
+/* ESM import */var _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_407108_407127__(/*! ./decode_codepoint.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode_codepoint.js");
 
 
 
@@ -11022,9 +11022,9 @@ function decodeXML(str) {
 /*!*********************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode_codepoint.js ***!
   \*********************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_428862_428881__) {
-__nested_webpack_require_428862_428881__.r(__nested_webpack_exports__);
-__nested_webpack_require_428862_428881__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_428901_428920__) {
+__nested_webpack_require_428901_428920__.r(__nested_webpack_exports__);
+__nested_webpack_require_428901_428920__.d(__nested_webpack_exports__, {
   "default": () => (decodeCodePoint),
   fromCodePoint: () => (fromCodePoint),
   replaceCodePoint: () => (replaceCodePoint)
@@ -11106,14 +11106,14 @@ function decodeCodePoint(codePoint) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/encode.js ***!
   \***********************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_431605_431624__) {
-__nested_webpack_require_431605_431624__.r(__nested_webpack_exports__);
-__nested_webpack_require_431605_431624__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_431644_431663__) {
+__nested_webpack_require_431644_431663__.r(__nested_webpack_exports__);
+__nested_webpack_require_431644_431663__.d(__nested_webpack_exports__, {
   encodeHTML: () => (encodeHTML),
   encodeNonAsciiHTML: () => (encodeNonAsciiHTML)
 });
-/* ESM import */var _generated_encode_html_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_431605_431624__(/*! ./generated/encode-html.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/encode-html.js");
-/* ESM import */var _escape_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_431605_431624__(/*! ./escape.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/escape.js");
+/* ESM import */var _generated_encode_html_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_431644_431663__(/*! ./generated/encode-html.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/encode-html.js");
+/* ESM import */var _escape_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_431644_431663__(/*! ./escape.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/escape.js");
 
 
 const htmlReplacer = /[\t\n!-,./:-@[-`\f{-}$\x80-\uFFFF]/g;
@@ -11189,9 +11189,9 @@ function encodeHTMLTrieRe(regExp, str) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/escape.js ***!
   \***********************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_435222_435241__) {
-__nested_webpack_require_435222_435241__.r(__nested_webpack_exports__);
-__nested_webpack_require_435222_435241__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_435261_435280__) {
+__nested_webpack_require_435261_435280__.r(__nested_webpack_exports__);
+__nested_webpack_require_435261_435280__.d(__nested_webpack_exports__, {
   encodeXML: () => (encodeXML),
   escape: () => (escape),
   escapeAttribute: () => (escapeAttribute),
@@ -11322,9 +11322,9 @@ const escapeText = getEscaper(/[&<>\u00A0]/g, new Map([
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-html.js ***!
   \*******************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_439998_440017__) {
-__nested_webpack_require_439998_440017__.r(__nested_webpack_exports__);
-__nested_webpack_require_439998_440017__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_440037_440056__) {
+__nested_webpack_require_440037_440056__.r(__nested_webpack_exports__);
+__nested_webpack_require_440037_440056__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 });
 // Generated using scripts/write-decode-map.ts
@@ -11340,9 +11340,9 @@ __nested_webpack_require_439998_440017__.d(__nested_webpack_exports__, {
 /*!******************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/decode-data-xml.js ***!
   \******************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_488430_488449__) {
-__nested_webpack_require_488430_488449__.r(__nested_webpack_exports__);
-__nested_webpack_require_488430_488449__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_488469_488488__) {
+__nested_webpack_require_488469_488488__.r(__nested_webpack_exports__);
+__nested_webpack_require_488469_488488__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 });
 // Generated using scripts/write-decode-map.ts
@@ -11358,9 +11358,9 @@ __nested_webpack_require_488430_488449__.d(__nested_webpack_exports__, {
 /*!**************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/generated/encode-html.js ***!
   \**************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_489401_489420__) {
-__nested_webpack_require_489401_489420__.r(__nested_webpack_exports__);
-__nested_webpack_require_489401_489420__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_489440_489459__) {
+__nested_webpack_require_489440_489459__.r(__nested_webpack_exports__);
+__nested_webpack_require_489440_489459__.d(__nested_webpack_exports__, {
   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 });
 // Generated using scripts/write-encode-map.ts
@@ -11379,9 +11379,9 @@ function restoreDiff(arr) {
 /*!**********************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/index.js ***!
   \**********************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_517068_517087__) {
-__nested_webpack_require_517068_517087__.r(__nested_webpack_exports__);
-__nested_webpack_require_517068_517087__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_517107_517126__) {
+__nested_webpack_require_517107_517126__.r(__nested_webpack_exports__);
+__nested_webpack_require_517107_517126__.d(__nested_webpack_exports__, {
   DecodingMode: () => (/* reexport safe */ _decode_js__WEBPACK_IMPORTED_MODULE_0__.DecodingMode),
   EncodingMode: () => (EncodingMode),
   EntityDecoder: () => (/* reexport safe */ _decode_js__WEBPACK_IMPORTED_MODULE_0__.EntityDecoder),
@@ -11408,9 +11408,9 @@ __nested_webpack_require_517068_517087__.d(__nested_webpack_exports__, {
   escapeText: () => (/* reexport safe */ _escape_js__WEBPACK_IMPORTED_MODULE_2__.escapeText),
   escapeUTF8: () => (/* reexport safe */ _escape_js__WEBPACK_IMPORTED_MODULE_2__.escapeUTF8)
 });
-/* ESM import */var _decode_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_517068_517087__(/*! ./decode.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode.js");
-/* ESM import */var _encode_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_517068_517087__(/*! ./encode.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/encode.js");
-/* ESM import */var _escape_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_517068_517087__(/*! ./escape.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/escape.js");
+/* ESM import */var _decode_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_517107_517126__(/*! ./decode.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/decode.js");
+/* ESM import */var _encode_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_517107_517126__(/*! ./encode.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/encode.js");
+/* ESM import */var _escape_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_517107_517126__(/*! ./escape.js */ "./node_modules/.pnpm/entities@4.5.0/node_modules/entities/lib/esm/escape.js");
 
 
 
@@ -11512,9 +11512,9 @@ function encode(data, options = EntityLevel.XML) {
 /*!******************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode-codepoint.js ***!
   \******************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_523959_523978__) {
-__nested_webpack_require_523959_523978__.r(__nested_webpack_exports__);
-__nested_webpack_require_523959_523978__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_523998_524017__) {
+__nested_webpack_require_523998_524017__.r(__nested_webpack_exports__);
+__nested_webpack_require_523998_524017__.d(__nested_webpack_exports__, {
   replaceCodePoint: () => (replaceCodePoint)
 });
 // Adapted from https://github.com/mathiasbynens/he/blob/36afe179392226cf1b6ccdb16ebbb7a5a844d93a/src/he.js#L106-L134
@@ -11569,9 +11569,9 @@ function replaceCodePoint(codePoint) {
 /*!********************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode.js ***!
   \********************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_525682_525701__) {
-__nested_webpack_require_525682_525701__.r(__nested_webpack_exports__);
-__nested_webpack_require_525682_525701__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_525721_525740__) {
+__nested_webpack_require_525721_525740__.r(__nested_webpack_exports__);
+__nested_webpack_require_525721_525740__.d(__nested_webpack_exports__, {
   DecodingMode: () => (DecodingMode),
   EntityDecoder: () => (EntityDecoder),
   decodeHTML: () => (decodeHTML),
@@ -11583,10 +11583,10 @@ __nested_webpack_require_525682_525701__.d(__nested_webpack_exports__, {
   replaceCodePoint: () => (/* reexport safe */ _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_0__.replaceCodePoint),
   xmlDecodeTree: () => (/* reexport safe */ _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_2__.xmlDecodeTree)
 });
-/* ESM import */var _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_525682_525701__(/*! ./decode-codepoint.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode-codepoint.js");
-/* ESM import */var _generated_decode_data_html_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_525682_525701__(/*! ./generated/decode-data-html.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-html.js");
-/* ESM import */var _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_525682_525701__(/*! ./generated/decode-data-xml.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-xml.js");
-/* ESM import */var _internal_bin_trie_flags_js__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_525682_525701__(/*! ./internal/bin-trie-flags.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/bin-trie-flags.js");
+/* ESM import */var _decode_codepoint_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_525721_525740__(/*! ./decode-codepoint.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode-codepoint.js");
+/* ESM import */var _generated_decode_data_html_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_525721_525740__(/*! ./generated/decode-data-html.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-html.js");
+/* ESM import */var _generated_decode_data_xml_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_525721_525740__(/*! ./generated/decode-data-xml.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-xml.js");
+/* ESM import */var _internal_bin_trie_flags_js__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_525721_525740__(/*! ./internal/bin-trie-flags.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/bin-trie-flags.js");
 
 
 
@@ -12137,12 +12137,12 @@ function decodeXML(xmlString) {
 /*!****************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-html.js ***!
   \****************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_551197_551216__) {
-__nested_webpack_require_551197_551216__.r(__nested_webpack_exports__);
-__nested_webpack_require_551197_551216__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_551236_551255__) {
+__nested_webpack_require_551236_551255__.r(__nested_webpack_exports__);
+__nested_webpack_require_551236_551255__.d(__nested_webpack_exports__, {
   htmlDecodeTree: () => (htmlDecodeTree)
 });
-/* ESM import */var _internal_decode_shared_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_551197_551216__(/*! ../internal/decode-shared.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/decode-shared.js");
+/* ESM import */var _internal_decode_shared_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_551236_551255__(/*! ../internal/decode-shared.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/decode-shared.js");
 // Generated using scripts/write-decode-map.ts
 
 /** Packed HTML decode trie data. */
@@ -12154,12 +12154,12 @@ const htmlDecodeTree = /* #__PURE__ */ (0,_internal_decode_shared_js__WEBPACK_IM
 /*!***************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-xml.js ***!
   \***************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_584512_584531__) {
-__nested_webpack_require_584512_584531__.r(__nested_webpack_exports__);
-__nested_webpack_require_584512_584531__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_584551_584570__) {
+__nested_webpack_require_584551_584570__.r(__nested_webpack_exports__);
+__nested_webpack_require_584551_584570__.d(__nested_webpack_exports__, {
   xmlDecodeTree: () => (xmlDecodeTree)
 });
-/* ESM import */var _internal_decode_shared_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_584512_584531__(/*! ../internal/decode-shared.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/decode-shared.js");
+/* ESM import */var _internal_decode_shared_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_584551_584570__(/*! ../internal/decode-shared.js */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/decode-shared.js");
 // Generated using scripts/write-decode-map.ts
 
 /** Packed XML decode trie data. */
@@ -12171,9 +12171,9 @@ const xmlDecodeTree = /* #__PURE__ */ (0,_internal_decode_shared_js__WEBPACK_IMP
 /*!*************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/bin-trie-flags.js ***!
   \*************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_585678_585697__) {
-__nested_webpack_require_585678_585697__.r(__nested_webpack_exports__);
-__nested_webpack_require_585678_585697__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_585717_585736__) {
+__nested_webpack_require_585717_585736__.r(__nested_webpack_exports__);
+__nested_webpack_require_585717_585736__.d(__nested_webpack_exports__, {
   BinTrieFlags: () => (BinTrieFlags)
 });
 /**
@@ -12200,9 +12200,9 @@ var BinTrieFlags;
 /*!************************************************************************************************!*\
   !*** ./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/internal/decode-shared.js ***!
   \************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_587239_587258__) {
-__nested_webpack_require_587239_587258__.r(__nested_webpack_exports__);
-__nested_webpack_require_587239_587258__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_587278_587297__) {
+__nested_webpack_require_587278_587297__.r(__nested_webpack_exports__);
+__nested_webpack_require_587278_587297__.d(__nested_webpack_exports__, {
   decodeBase64: () => (decodeBase64)
 });
 /**
@@ -12228,12 +12228,12 @@ function decodeBase64(input) {
 /*!*******************************************************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Parser.js ***!
   \*******************************************************************************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_588743_588762__) {
-__nested_webpack_require_588743_588762__.r(__nested_webpack_exports__);
-__nested_webpack_require_588743_588762__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_588782_588801__) {
+__nested_webpack_require_588782_588801__.r(__nested_webpack_exports__);
+__nested_webpack_require_588782_588801__.d(__nested_webpack_exports__, {
   Parser: () => (Parser)
 });
-/* ESM import */var _Tokenizer_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_588743_588762__(/*! ./Tokenizer.js */ "./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Tokenizer.js");
+/* ESM import */var _Tokenizer_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_588782_588801__(/*! ./Tokenizer.js */ "./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Tokenizer.js");
 const { fromCodePoint } = String;
 
 const formTags = new Set([
@@ -12894,15 +12894,15 @@ class Parser {
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/htmlparser2@12.0.0_patch_hash=741b06dbf8a09e52a2116a4a219a8625dbebe8d75d37e1210314f06aa952ce9b/node_modules/htmlparser2/dist/Tokenizer.js ***!
   \**********************************************************************************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_611419_611438__) {
-__nested_webpack_require_611419_611438__.r(__nested_webpack_exports__);
-__nested_webpack_require_611419_611438__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_611458_611477__) {
+__nested_webpack_require_611458_611477__.r(__nested_webpack_exports__);
+__nested_webpack_require_611458_611477__.d(__nested_webpack_exports__, {
   QuoteType: () => (QuoteType),
   "default": () => (Tokenizer)
 });
-/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_611419_611438__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode.js");
-/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_611419_611438__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-xml.js");
-/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_611419_611438__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-html.js");
+/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_611458_611477__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/decode.js");
+/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_611458_611477__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-xml.js");
+/* ESM import */var entities_decode__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_611458_611477__(/*! entities/decode */ "./node_modules/.pnpm/entities@8.0.0/node_modules/entities/dist/generated/decode-data-html.js");
 
 var CharCodes;
 (function (CharCodes) {
@@ -13965,9 +13965,9 @@ class Tokenizer {
 /*!*****************************************************************************************************!*\
   !*** ./packages/scramjet/packages/core/rewriter/wasm/out/snippets/wasm-4b0f351a8e6eeb46/inline0.js ***!
   \*****************************************************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_653448_653467__) {
-__nested_webpack_require_653448_653467__.r(__nested_webpack_exports__);
-__nested_webpack_require_653448_653467__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_653487_653506__) {
+__nested_webpack_require_653487_653506__.r(__nested_webpack_exports__);
+__nested_webpack_require_653487_653506__.d(__nested_webpack_exports__, {
   scramtag: () => (scramtag)
 });
 
@@ -13983,14 +13983,14 @@ function scramtag() {
 /*!*******************************************************************!*\
   !*** ./packages/scramjet/packages/core/rewriter/wasm/out/wasm.js ***!
   \*******************************************************************/
-(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_654110_654129__) {
-__nested_webpack_require_654110_654129__.r(__nested_webpack_exports__);
-__nested_webpack_require_654110_654129__.d(__nested_webpack_exports__, {
+(function (__unused_webpack___webpack_module__, __nested_webpack_exports__, __nested_webpack_require_654149_654168__) {
+__nested_webpack_require_654149_654168__.r(__nested_webpack_exports__);
+__nested_webpack_require_654149_654168__.d(__nested_webpack_exports__, {
   Rewriter: () => (Rewriter),
   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
   initSync: () => (initSync)
 });
-/* ESM import */var _snippets_wasm_4b0f351a8e6eeb46_inline0_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_654110_654129__(/*! ./snippets/wasm-4b0f351a8e6eeb46/inline0.js */ "./packages/scramjet/packages/core/rewriter/wasm/out/snippets/wasm-4b0f351a8e6eeb46/inline0.js");
+/* ESM import */var _snippets_wasm_4b0f351a8e6eeb46_inline0_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_654149_654168__(/*! ./snippets/wasm-4b0f351a8e6eeb46/inline0.js */ "./packages/scramjet/packages/core/rewriter/wasm/out/snippets/wasm-4b0f351a8e6eeb46/inline0.js");
 
 
 let wasm;
@@ -14425,7 +14425,7 @@ async function __wbg_init(module_or_path) {
 var __webpack_module_cache__ = {};
 
 // The require function
-function __nested_webpack_require_669413__(moduleId) {
+function __nested_webpack_require_669452__(moduleId) {
 
 // Check if module is in cache
 var cachedModule = __webpack_module_cache__[moduleId];
@@ -14437,7 +14437,7 @@ var module = (__webpack_module_cache__[moduleId] = {
 exports: {}
 });
 // Execute the module function
-__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_669413__);
+__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_669452__);
 
 // Return the exports of the module
 return module.exports;
@@ -14448,20 +14448,20 @@ return module.exports;
 // webpack/runtime/compat_get_default_export
 (() => {
 // getDefaultExport function for compatibility with non-ESM modules
-__nested_webpack_require_669413__.n = (module) => {
+__nested_webpack_require_669452__.n = (module) => {
 	var getter = module && module.__esModule ?
 		() => (module['default']) :
 		() => (module);
-	__nested_webpack_require_669413__.d(getter, { a: getter });
+	__nested_webpack_require_669452__.d(getter, { a: getter });
 	return getter;
 };
 
 })();
 // webpack/runtime/define_property_getters
 (() => {
-__nested_webpack_require_669413__.d = (exports, definition) => {
+__nested_webpack_require_669452__.d = (exports, definition) => {
 	for(var key in definition) {
-        if(__nested_webpack_require_669413__.o(definition, key) && !__nested_webpack_require_669413__.o(exports, key)) {
+        if(__nested_webpack_require_669452__.o(definition, key) && !__nested_webpack_require_669452__.o(exports, key)) {
             Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
         }
     }
@@ -14469,12 +14469,12 @@ __nested_webpack_require_669413__.d = (exports, definition) => {
 })();
 // webpack/runtime/has_own_property
 (() => {
-__nested_webpack_require_669413__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+__nested_webpack_require_669452__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 })();
 // webpack/runtime/make_namespace_object
 (() => {
 // define __esModule on exports
-__nested_webpack_require_669413__.r = (exports) => {
+__nested_webpack_require_669452__.r = (exports) => {
 	if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 	}
@@ -14489,8 +14489,8 @@ var __nested_webpack_exports__ = {};
 /*!******************************************************!*\
   !*** ./packages/scramjet/packages/core/src/index.ts ***!
   \******************************************************/
-__nested_webpack_require_669413__.r(__nested_webpack_exports__);
-__nested_webpack_require_669413__.d(__nested_webpack_exports__, {
+__nested_webpack_require_669452__.r(__nested_webpack_exports__);
+__nested_webpack_require_669452__.d(__nested_webpack_exports__, {
   BareResponse: () => (/* reexport safe */ _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_8__.BareResponse),
   CookieJar: () => (/* reexport safe */ _shared__WEBPACK_IMPORTED_MODULE_6__.CookieJar),
   IncrementalHtmlRewriter: () => (/* reexport safe */ _shared__WEBPACK_IMPORTED_MODULE_6__.IncrementalHtmlRewriter),
@@ -14544,17 +14544,17 @@ __nested_webpack_require_669413__.d(__nested_webpack_exports__, {
   unrewriteUrl: () => (/* reexport safe */ _shared__WEBPACK_IMPORTED_MODULE_6__.unrewriteUrl),
   versionInfo: () => (versionInfo)
 });
-/* ESM import */var _global_d__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_669413__(/*! ./global.d */ "./packages/scramjet/packages/core/src/global.d.ts");
-/* ESM import */var _global_d__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_669413__.n(_global_d__WEBPACK_IMPORTED_MODULE_0__);
-/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_669413__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
-/* ESM import */var _rewriters_wasm__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_669413__(/*! @rewriters/wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
-/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_669413__(/*! ./symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
-/* ESM import */var _types__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_669413__(/*! ./types */ "./packages/scramjet/packages/core/src/types.ts");
-/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_669413__(/*! ./Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
-/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_669413__(/*! ./shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
-/* ESM import */var _fetch__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_669413__(/*! ./fetch */ "./packages/scramjet/packages/core/src/fetch/index.ts");
-/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_669413__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
-/* ESM import */var _client__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_669413__(/*! ./client */ "./packages/scramjet/packages/core/src/client/index.ts");
+/* ESM import */var _global_d__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_669452__(/*! ./global.d */ "./packages/scramjet/packages/core/src/global.d.ts");
+/* ESM import */var _global_d__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_669452__.n(_global_d__WEBPACK_IMPORTED_MODULE_0__);
+/* ESM import */var _shared_snapshot__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_669452__(/*! @/shared/snapshot */ "./packages/scramjet/packages/core/src/shared/snapshot.ts");
+/* ESM import */var _rewriters_wasm__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_669452__(/*! @rewriters/wasm */ "./packages/scramjet/packages/core/src/shared/rewriters/wasm.ts");
+/* ESM import */var _symbols__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_669452__(/*! ./symbols */ "./packages/scramjet/packages/core/src/symbols.ts");
+/* ESM import */var _types__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_669452__(/*! ./types */ "./packages/scramjet/packages/core/src/types.ts");
+/* ESM import */var _Tap__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_669452__(/*! ./Tap */ "./packages/scramjet/packages/core/src/Tap.ts");
+/* ESM import */var _shared__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_669452__(/*! ./shared */ "./packages/scramjet/packages/core/src/shared/index.ts");
+/* ESM import */var _fetch__WEBPACK_IMPORTED_MODULE_7__ = __nested_webpack_require_669452__(/*! ./fetch */ "./packages/scramjet/packages/core/src/fetch/index.ts");
+/* ESM import */var _mercuryworkshop_proxy_transports__WEBPACK_IMPORTED_MODULE_8__ = __nested_webpack_require_669452__(/*! @mercuryworkshop/proxy-transports */ "./node_modules/.pnpm/@mercuryworkshop+proxy-transports@1.0.2/node_modules/@mercuryworkshop/proxy-transports/dist/index.mjs");
+/* ESM import */var _client__WEBPACK_IMPORTED_MODULE_9__ = __nested_webpack_require_669452__(/*! ./client */ "./packages/scramjet/packages/core/src/client/index.ts");
 // NOTE: this is the entrypoint for scramjet.bundle.js
 // as such it exports everything in scramjet
 // the entry point for scramjet.all.js (what most sites wil use) is entry.ts
@@ -14564,7 +14564,7 @@ __nested_webpack_require_669413__.d(__nested_webpack_exports__, {
 const versionInfo = {
     version: "2.0.67-alpha.2",
     build: "365ef18f",
-    date: "2026-11-24T05:54:05.205Z"
+    date: "2026-11-24T23:42:47.797Z"
 };
 const defaultConfig = {
     globals: {

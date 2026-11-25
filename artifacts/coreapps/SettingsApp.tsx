@@ -223,7 +223,7 @@ const SettingText: Component<{
 class SettingsApp extends App {
 	name = "Settings";
 	package = "anura.settings";
-	icon = "/AnuraOS/assets/icons/settings.png";
+	icon = "/assets/icons/settings.png";
 	win: WMWindow;
 
 	constructor() {
@@ -424,17 +424,17 @@ class SettingsApp extends App {
 														) * 1000000,
 													);
 													const emulator = new V86({
-														wasm_path: "/AnuraOS/lib/v86.wasm",
+														wasm_path: "/lib/v86.wasm",
 														memory_size: 512 * 1024 * 1024,
 														vga_memory_size: 8 * 1024 * 1024,
 														screen_container: anura.x86!.screen_container,
 
 														initrd: {
-															url: "/AnuraOS/x86images/resizefs.img",
+															url: "/x86images/resizefs.img",
 														},
 
 														bzimage: {
-															url: "/AnuraOS/x86images/bzResize",
+															url: "/x86images/bzResize",
 															async: false,
 														},
 														hda: {

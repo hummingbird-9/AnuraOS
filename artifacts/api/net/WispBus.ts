@@ -7,9 +7,7 @@ type WispClientMapping = {
 type WispServerMapping = {
 	regex: RegExp;
 	handler:
-		| ((data: any) => WebSocket | RTCDataChannel)
-		| WebSocket
-		| RTCDataChannel;
+		((data: any) => WebSocket | RTCDataChannel) | WebSocket | RTCDataChannel;
 	lastId: number;
 	clients: Map<number, number>;
 	defaultBuffer?: number;
@@ -43,24 +41,29 @@ class WispBus {
 	setUpstreamProvider(upstreamProvider: WebSocket | RTCDataChannel) {
 		for (const [globalID, mapping] of this.clientMappings.entries()) {
 			if (mapping.handler !== this.upstream) continue;
-			for (const virtualServer of this.virtualServerMapping.values() as any) {
-				for (const [clientStreamID, mappedGlobalID] of virtualServer.mappings.entries()) {
-					if (mappedGlobalID !== globalID) continue;
-					virtualServer.mappings.delete(clientStreamID);
-					try {
-						mapping.packetCallBack(wisp.createWispPacket({packetType:wisp.CLOSE,streamID:clientStreamID,reason:0x03}));
-					} catch { /* the client may already have been disposed */ }
-				}
+
+			try {
+				mapping.handler.send(
+					wisp.createWispPacket({
+						packetType: wisp.CLOSE,
+						streamID: mapping.remoteId,
+					}),
+				);
+			} catch {
+				// ignore errors while replacing the upstream provider
 			}
-			try { mapping.handler.send(wisp.createWispPacket({packetType:wisp.CLOSE,streamID:mapping.remoteId})); }
-			catch { /* the old upstream may already be closed */ }
+
 			this.clientMappings.delete(globalID);
 			this.upstreamClients.delete(mapping.remoteId);
 		}
+
 		this.upstream = upstreamProvider;
 		this.upstream.binaryType = "arraybuffer";
 		this.upstream.addEventListener("message", (e) => {
-			this.handleIncomingPacket("upstream", new Uint8Array((e as MessageEvent).data));
+			this.handleIncomingPacket(
+				"upstream",
+				new Uint8Array((e as MessageEvent).data),
+			);
 		});
 	}
 
@@ -68,9 +71,7 @@ class WispBus {
 		id: string,
 		regex: RegExp,
 		handler:
-			| ((data: any) => WebSocket | RTCDataChannel)
-			| WebSocket
-			| RTCDataChannel,
+			((data: any) => WebSocket | RTCDataChannel) | WebSocket | RTCDataChannel,
 	) {
 		this.serverMappings.set(id, {
 			regex,
@@ -199,19 +200,16 @@ class WispBus {
 				.mappings.set(parsed.streamID, this.lastGlobalID++); // return which ID we actually mapped
 		}
 		if (parsed?.packetType == wisp.DATA || parsed?.packetType == wisp.CLOSE) {
-			const virtualServer = this.virtualServerMapping.get(virtualServerID);
-			const globalID = virtualServer?.mappings.get(parsed.streamID);
-			const streamMetaData = globalID === undefined ? undefined : this.clientMappings.get(globalID);
-			if (!streamMetaData) {
-				virtualServer?.mappings.delete(parsed.streamID);
-				return null;
-			}
-			const assignedHandler = streamMetaData.handler;
-			parsed.streamID = streamMetaData.remoteId;
+			const streamMetaData = this.clientMappings.get(
+				this.virtualServerMapping
+					.get(virtualServerID)
+					.mappings.get(parsed.streamID),
+			);
+			const assignedHandler = streamMetaData!.handler;
+			parsed.streamID = streamMetaData!.remoteId; // modify the stream ID and then send it off
 			assignedHandler.send(wisp.createWispPacket(parsed));
 			return null;
 		}
-
 		return undefined;
 	}
 

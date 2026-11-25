@@ -270,7 +270,7 @@ class OobeView {
 					<div id="subtitle" style="color: white;">
 						For the best experience, AnuraOS needs to download required assets.
 					</div>
-					<img src="/AnuraOS/assets/oobe/spinner.gif" />
+					<img src="/assets/oobe/spinner.gif" />
 					<br />
 					<span id="tracker"></span>
 				</div>
@@ -331,7 +331,7 @@ class OobeView {
 
 async function installx86(tracker = document.getElementById("tracker")) {
 	console.debug("installing x86");
-	await anura.fs.promises.mkdir("/boot");
+	await anura.fs.mkdir("/boot");
 	const x86image = anura.settings.get("x86-image");
 	tracker!.innerText = "Downloading x86 kernel";
 	const bzimage = await fetch(anura.config.x86[x86image].bzimage);
@@ -424,17 +424,9 @@ async function installx86(tracker = document.getElementById("tracker")) {
 		}
 
 		console.debug("constructing blobs...");
-		tracker!.innerText = "Concatenating x86 rootfs";
-		let rootfsBlob = new Blob(files);
-		if ((anura.config.x86[x86image] as any).rootfsCompression === "gzip") {
-			tracker!.innerText = "Decompressing x86 rootfs";
-			rootfsBlob = await new Response(
-				rootfsBlob.stream().pipeThrough(new DecompressionStream("gzip")),
-			).blob();
-		}
-		files.length = 0;
+		tracker!.innerText = "Concatenating and installing x86 rootfs";
 		//@ts-ignore
-		await anura.x86hdd.loadfile(rootfsBlob);
+		await anura.x86hdd.loadfile(new Blob(files));
 	}
 
 	console.debug("done");

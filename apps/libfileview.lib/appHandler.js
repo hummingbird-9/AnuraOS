@@ -64,7 +64,7 @@ async function handleAppView(
 	iframe.contentWindow.addEventListener("load", () => {
 		const matter = document.createElement("link");
 		matter.setAttribute("rel", "stylesheet");
-		matter.setAttribute("href", "/AnuraOS/assets/matter.css");
+		matter.setAttribute("href", "/assets/matter.css");
 		iframe.contentDocument.head.appendChild(matter);
 	});
 }
@@ -97,7 +97,7 @@ async function createArchiveAppView(path, type) {
 			description: `${path.replace("//", "/")} is being installed, please wait`,
 			timeout: 50000,
 		});
-		await anura.fs.promises.mkdir(`${path.replace("//", "/")}`);
+		await anura.fs.mkdir(`${path.replace("//", "/")}`);
 		try {
 			for (const [relativePath, content] of Object.entries(zip)) {
 				if (relativePath.endsWith("/")) {

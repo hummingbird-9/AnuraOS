@@ -149,13 +149,8 @@ async function InitV86Hdd(): Promise<FakeFile> {
 			}
 		},
 		save: async (emulator = anura.x86?.emulator) => {
-			const blockCache = (emulator as any)?.disk_images?.hda?.block_cache;
-			if (!blockCache) {
-				console.debug("Skipping x86 disk save until the v86 disk cache is ready.");
-				return;
-			}
 			const part_cache: any = {};
-			for (const [offset, buffer] of blockCache) {
+			for (const [offset, buffer] of emulator.disk_images.hda.block_cache) {
 				const start = offset * BUF_SIZE;
 				const starti = Math.floor(start / SLICE_SIZE);
 				let i = starti;
@@ -268,15 +263,15 @@ class V86Backend {
 		const sh = new fs.Shell();
 
 		this.emulator = new V86({
-			wasm_path: "/AnuraOS/lib/v86.wasm",
+			wasm_path: "/lib/v86.wasm",
 			memory_size: anura.settings.get("x86-memory") * 1024 * 1024,
 			vga_memory_size: 8 * 1024 * 1024,
 			screen_container: this.screen_container,
 			initrd: {
-				url: "/AnuraOS/fs/boot/initrd.img",
+				url: "/fs/boot/initrd.img",
 			},
 			bzimage: {
-				url: "/AnuraOS/fs/boot/bzimage",
+				url: "/fs/boot/bzimage",
 				async: false,
 			},
 
@@ -289,8 +284,8 @@ class V86Backend {
 				"rw init=/sbin/init root=/dev/sda rootfstype=ext4 random.trust_cpu=on 8250.nr_uarts=10 spectre_v2=off pti=off mitigations=off ipv6.disable=1",
 			filesystem: { fs, sh, Path, Buffer },
 
-			bios: { url: "/AnuraOS/bios/seabios.bin" },
-			vga_bios: { url: "/AnuraOS/bios/vgabios.bin" },
+			bios: { url: "/bios/seabios.bin" },
+			vga_bios: { url: "/bios/vgabios.bin" },
 			net_device: {
 				relay_url: anura.wsproxyURL
 					.replace("ws://", "wisp://")

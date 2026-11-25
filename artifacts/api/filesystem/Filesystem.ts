@@ -646,7 +646,7 @@ class AnuraFilesystem implements AnuraFSOperations<any> {
 			// @ts-ignore
 			return await this.whatwgfs.fs.getOriginPrivateDirectory(
 				// @ts-ignore
-				import("/AnuraOS/libs/nfsadapter/adapters/anuraadapter.js"),
+				import("/libs/nfsadapter/adapters/anuraadapter.js"),
 			);
 		},
 		fileOrDirectoryFromPath: async (path: string) => {
@@ -702,7 +702,7 @@ class AnuraFilesystem implements AnuraFSOperations<any> {
 
 		(async () => {
 			// @ts-ignore
-			const fs = await import("/AnuraOS/libs/nfsadapter/nfsadapter.js");
+			const fs = await import("/libs/nfsadapter/nfsadapter.js");
 			// @ts-ignore
 			this.whatwgfs.FileSystemDirectoryHandle = fs.FileSystemDirectoryHandle;
 			// @ts-ignore

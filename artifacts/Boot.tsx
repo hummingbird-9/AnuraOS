@@ -91,21 +91,13 @@ let anura: Anura;
 // global
 
 window.addEventListener("load", async () => {
-	// AnuraOS is deployed below /AnuraOS/ on this host. Loading it from the
-	// domain root puts the document outside the service worker's allowed scope.
-	const appBasePath = "/AnuraOS/";
-	if (!window.location.pathname.startsWith(appBasePath)) {
-		window.location.replace(appBasePath + window.location.search + window.location.hash);
-		return;
-	}
-
 	const swShared: any = {
 		test: true,
 	};
 
 	(window as any).swShared = swShared;
 
-	const comlinksrc = "/AnuraOS/libs/comlink/comlink.min.mjs";
+	const comlinksrc = "/libs/comlink/comlink.min.mjs";
 	const comlink = await import(comlinksrc);
 
 	let conf, milestone, commit;
@@ -115,9 +107,9 @@ window.addEventListener("load", async () => {
 		bootStrapFs = (await LocalFS.newRootOPFS()) as any;
 	}
 	try {
-		conf = await (await fetch("/AnuraOS/config.json")).json();
-		milestone = await (await fetch("/AnuraOS/MILESTONE")).text();
-		commit = await (await fetch("/AnuraOS/COMMIT")).text();
+		conf = await (await fetch("/config.json")).json();
+		milestone = await (await fetch("/MILESTONE")).text();
+		commit = await (await fetch("/COMMIT")).text();
 
 		console.debug("writing config??");
 		await bootStrapFs.promises.writeFile(
@@ -157,85 +149,31 @@ window.addEventListener("load", async () => {
 
 	swShared.anura = anura;
 	swShared.sh = new anura.fs.Shell();
-	let comlinkController: ServiceWorker | null = null;
-	async function initComlink(force = false) {
-		const controller = navigator.serviceWorker.controller;
-		if (!controller || (!force && controller === comlinkController)) return;
-		comlinkController = controller;
-
+	async function initComlink() {
 		const { port1, port2 } = new MessageChannel();
+
 		const msg = {
 			anura_target: "anura.comlink.init",
 			value: port2,
 		};
+
 		comlink.expose(swShared, port1);
-		controller.postMessage(msg, [port2]);
-		if (swShared.anura) {
-			controller.postMessage({ anura_target: "anura.nohost.set" });
-		}
+
+		navigator.serviceWorker.controller!.postMessage(msg, [port2]);
+		if (swShared.anura)
+			navigator.serviceWorker.controller!.postMessage({
+				anura_target: "anura.nohost.set",
+			});
 	}
 
-	navigator.serviceWorker.addEventListener("controllerchange", () => initComlink());
+	navigator.serviceWorker.addEventListener("controllerchange", initComlink);
+
+	await navigator.serviceWorker.register("/anura-sw.js");
+	initComlink();
+
 	navigator.serviceWorker.addEventListener("message", (event) => {
-		if (event.data?.anura_target === "anura.sw.reinit") initComlink(true);
+		if (event.data.anura_target === "anura.sw.reinit") initComlink(); // this could accidentally be run twice but realistically there aren't any consequences for doing so
 	});
-
-	const registration = await navigator.serviceWorker.register("/AnuraOS/anura-sw.js", { scope: appBasePath });
-
-	// Workbox clientsClaim() handles takeover when the worker activates. Never
-	// message registration.installing/waiting here: a non-active worker cannot
-	// call clients.claim() and throws InvalidStateError.
-	const waitForController = (timeoutMs: number) =>
-		new Promise<boolean>((resolve) => {
-			if (navigator.serviceWorker.controller) return resolve(true);
-			let finished = false;
-			const finish = () => {
-				if (finished) return;
-				finished = true;
-				navigator.serviceWorker.removeEventListener("controllerchange", onChange);
-				window.clearTimeout(timeout);
-				resolve(!!navigator.serviceWorker.controller);
-			};
-			const onChange = () => finish();
-			const timeout = window.setTimeout(finish, timeoutMs);
-			navigator.serviceWorker.addEventListener("controllerchange", onChange);
-		});
-
-	if (!navigator.serviceWorker.controller) {
-		try {
-			await navigator.serviceWorker.ready;
-		} catch (error) {
-			console.warn("Waiting for Anura service worker activation failed:", error);
-		}
-		await waitForController(10000);
-	}
-	if (!navigator.serviceWorker.controller && registration.active) {
-		// This request is sent only to registration.active, never to an
-		// installing or waiting worker. It repairs tabs that missed the
-		// activation-time clientsClaim() event.
-		console.warn("Anura service worker is active; requesting control of this tab.");
-		registration.active.postMessage({ anura_target: "anura.sw.claim" });
-		await waitForController(5000);
-	}
-	if (!navigator.serviceWorker.controller) {
-		// Reload once after activation so the next navigation is eligible for
-		// control by the active worker. Never enter a reload loop.
-		const retryKey = "anura-sw-control-reload";
-		if (!sessionStorage.getItem(retryKey) && registration.active) {
-			sessionStorage.setItem(retryKey, "1");
-			window.location.reload();
-			return;
-		}
-		console.error("Anura service worker is active but still does not control this page.", {
-			scope: registration.scope,
-			activeScript: registration.active?.scriptURL,
-			activeState: registration.active?.state,
-			page: window.location.href,
-		});
-	} else {
-		sessionStorage.removeItem("anura-sw-control-reload");
-		initComlink();
-	}
 
 	// Create "Process" that controls the service worker
 
@@ -402,7 +340,7 @@ window.addEventListener("load", async () => {
 		}
 	});
 
-	if ((await fetch("/AnuraOS/fs/")).status !== 404) {
+	if ((await fetch("/fs/")).status !== 404) {
 		try {
 			const files = await anura.fs.promises.readdir(directories["init"]);
 			if (files) {
@@ -575,7 +513,7 @@ document.addEventListener("anura-login-completed", async () => {
 
 	wallpaper.setWallpaper(
 		anura.settings.get("wallpaper") ||
-			"/AnuraOS/assets/wallpaper/bundled_wallpapers/Nocturne.jpg",
+			"/assets/wallpaper/bundled_wallpapers/Nocturne.jpg",
 	);
 
 	for (const bin of anura.config.bin) {
@@ -747,7 +685,7 @@ async function bootx86() {
 async function bootUserCustomizations() {
 	const directories = anura.settings.get("directories");
 	console.debug("directories", directories);
-	if ((await fetch("/AnuraOS/fs/")).status === 404) {
+	if ((await fetch("/fs/")).status === 404) {
 		// Safe mode
 		// Register recovery helper app
 		const recovery = new RecoveryApp();
@@ -811,7 +749,7 @@ async function bootUserCustomizations() {
 		if (files === undefined) return;
 		for (const file of files) {
 			try {
-				await anura.registerExternalLib(`/AnuraOS/fs/${directories["libs"]}/${file}/`);
+				await anura.registerExternalLib(`/fs/${directories["libs"]}/${file}/`);
 			} catch (e) {
 				anura.logger.error("Anura failed to load a lib", e);
 			}
@@ -831,7 +769,7 @@ async function bootUserCustomizations() {
 				if (type === "DIRECTORY") {
 					try {
 						await anura.registerExternalApp(
-							`/AnuraOS/fs/${directories["apps"]}/${file}/`,
+							`/fs/${directories["apps"]}/${file}/`,
 						);
 					} catch (e) {
 						anura.logger.error("Anura failed to load an app", e);

@@ -1,7 +1,7 @@
 class BrowserApp extends App {
 	name = "Anura Browser";
 	package = "anura.browser";
-	icon = "/AnuraOS/assets/icons/chrome.svg";
+	icon = "/assets/icons/chrome.svg";
 	source: string;
 	lib: BrowserLib;
 	lastWindow: WMWindow | undefined;
@@ -89,7 +89,7 @@ class BrowserApp extends App {
 		//@ts-ignore
 		iframe.style =
 			"top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0;";
-		iframe.setAttribute("src", "/AnuraOS/browser/index.html?v=anura-no-coep-20261124");
+		iframe.setAttribute("src", "/browser/index.html");
 
 		iframe.addEventListener("load", () => {
 			// On interaction with the iframe, set the last active window to this one

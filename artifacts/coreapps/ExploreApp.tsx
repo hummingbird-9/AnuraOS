@@ -1,7 +1,7 @@
 class ExploreApp extends App {
 	name = "Explore";
 	package = "anura.explore";
-	icon = "/AnuraOS/assets/icons/explore.png";
+	icon = "/assets/icons/explore.png";
 	hidden = false;
 
 	css = css`
@@ -148,7 +148,7 @@ class ExploreApp extends App {
 				operations. You can enable it in{" "}
 				<span>
 					<a href="javascript:anura.apps['anura.ui.settings'].open();">
-						<img src="/AnuraOS/assets/icons/settings.png" alt="Settings Icon" />
+						<img src="/assets/icons/settings.png" alt="Settings Icon" />
 						Settings
 					</a>
 					.
@@ -160,7 +160,7 @@ class ExploreApp extends App {
 				Code. You can download it from the Developer Repository in{" "}
 				<span>
 					<img
-						src="/AnuraOS/apps/marketplace.app/playstore.webp"
+						src="/apps/marketplace.app/playstore.webp"
 						alt="Marketplace Icon"
 					/>
 					<a href="javascript:anura.apps['anura.store'].open();">Marketplace</a>
@@ -191,10 +191,7 @@ class ExploreApp extends App {
 						It seems like you dont have the subsystem enabled. You can install
 						it from{" "}
 						<span>
-							<img
-								src="/AnuraOS/assets/icons/settings.png"
-								alt="Settings icon"
-							/>
+							<img src="/assets/icons/settings.png" alt="Settings icon" />
 							<a href="javascript:anura.apps['anura.settings'].open();">
 								Settings
 							</a>
@@ -206,10 +203,7 @@ class ExploreApp extends App {
 					<p>
 						You can open a terminal using the{" "}
 						<span>
-							<img
-								src="/AnuraOS/assets/icons/terminal.png"
-								alt="v86 Terminal Icon"
-							/>
+							<img src="/assets/icons/terminal.png" alt="v86 Terminal Icon" />
 							<a href="javascript:anura.apps['anura.ashell'].open(['--cmd', '/usr/bin/x86-run.ajs']);">
 								v86 Terminal
 							</a>
@@ -227,7 +221,7 @@ class ExploreApp extends App {
 				If you want to create a shortcut for an X11 app in the launcher, you can
 				do so from{" "}
 				<span>
-					<img src="/AnuraOS/assets/icons/settings.png" alt="Settings icon" />
+					<img src="/assets/icons/settings.png" alt="Settings icon" />
 					<a href="javascript:anura.apps['anura.settings'].open();">Settings</a>
 				</span>
 				.
@@ -238,7 +232,7 @@ class ExploreApp extends App {
 	welcome = (
 		<div id="body">
 			<div class="head">
-				<img src="/AnuraOS/icon.png" alt="AnuraOS Logo" />
+				<img src="/icon.png" alt="AnuraOS Logo" />
 				<h1>Welcome to AnuraOS!</h1>
 			</div>
 			<h2>What is AnuraOS?</h2>
@@ -260,7 +254,7 @@ class ExploreApp extends App {
 				To install more native Anura apps, you can head to the{" "}
 				<span>
 					<img
-						src="/AnuraOS/apps/marketplace.app/playstore.webp"
+						src="/apps/marketplace.app/playstore.webp"
 						alt="Marketplace Icon"
 					/>
 					<a href="javascript:anura.apps['anura.store'].open();">Marketplace</a>
@@ -274,7 +268,7 @@ class ExploreApp extends App {
 				<span>
 					<a href="javascript:anura.apps['anura.wallpaper'].open();">
 						<img
-							src="/AnuraOS/assets/icons/wallpaper.png"
+							src="/assets/icons/wallpaper.png"
 							alt="Wallpaper Selector Icon"
 						/>
 						Wallpaper &amp; Style
