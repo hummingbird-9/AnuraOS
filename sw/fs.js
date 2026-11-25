@@ -2,9 +2,9 @@
 // Due to anura's filesystem only being available once an anura instance is running,
 // we need a temporary filesystem to store files that are requested for caching.
 // As the anura filesystem is a wrapper around Filer, we can use default Filer here.
-importScripts("/libs/filer/filer.min.js");
-importScripts("/lib/api/filesystem/Filesystem.js");
-importScripts("/lib/api/filesystem/LocalFS.js");
+importScripts("/AnuraOS/libs/filer/filer.min.js");
+importScripts("/AnuraOS/lib/api/filesystem/Filesystem.js");
+importScripts("/AnuraOS/lib/api/filesystem/LocalFS.js");
 
 self.Buffer = Filer.Buffer;
 const filerfs = new Filer.FileSystem({

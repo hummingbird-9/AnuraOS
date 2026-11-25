@@ -4,15 +4,19 @@ workbox.routing.registerRoute(
 	/^(?!.*(\/config.json|\/MILESTONE|\/COMMIT|\/x86images\/))/,
 	async (event) => {
 		if (new URL(event.url).origin !== self.location.origin) return false;
+		const scopePath = new URL(self.registration.scope).pathname;
+		const requestPath = event.url.pathname.startsWith(scopePath)
+			? `/${event.url.pathname.slice(scopePath.length)}`
+			: event.url.pathname;
 		await bootStrapFSReady;
 		if (cacheenabled === undefined) {
 			console.debug("retrieving cache value");
 			cacheenabled = await idbKeyval.get("cacheenabled");
 		}
 		if (
-			(!cacheenabled && event.url.pathname === "/" && !navigator.onLine) ||
+			(!cacheenabled && requestPath === "/" && !navigator.onLine) ||
 			(!cacheenabled &&
-				event.url.pathname === "/index.html" &&
+				requestPath === "/index.html" &&
 				!navigator.onLine)
 		) {
 			return new Response(offlineError(), {
@@ -29,14 +33,14 @@ workbox.routing.registerRoute(
 				},
 			});
 		}
-		if (event.url.pathname === "/") event.url.pathname = "/index.html";
+		if (requestPath === "/") event.url.pathname = "/index.html";
 		if (event.url.password)
 			return new Response(
 				"<script>window.location.href = window.location.href</script>",
 				{ headers: { "content-type": "text/html" } },
 			);
 		const basepath = "/anura_files";
-		let path = decodeURI(event.url.pathname);
+		let path = decodeURI(requestPath);
 
 		// Force Filer to be used in cache routes, as it does not require waiting for anura to be connected
 		const fs = opfs || filerfs;

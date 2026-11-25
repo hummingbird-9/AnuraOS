@@ -5,7 +5,7 @@ workbox.routing.registerRoute(
 	async ({ url }) => {
 		let id = crypto.randomUUID();
 		let clients = (await self.clients.matchAll()).filter(
-			(v) => new URL(v.url).pathname === "/",
+			(v) => new URL(v.url).pathname === new URL(self.registration.scope).pathname,
 		);
 		if (clients.length < 1)
 			return new Response("no clients were available to take your request");

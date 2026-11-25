@@ -9,27 +9,27 @@ Object.defineProperty(globalThis, "crossOriginIsolated", {
 });
 
 // Importing mime
-importScripts("/libs/mime/mime.iife.js");
-importScripts("/libs/idb-keyval/idb-keyval.js");
-importScripts("/libs/comlink/comlink.min.umd.js");
-importScripts("/libs/workbox/workbox-v7.4.0/workbox-sw.js");
+importScripts("/AnuraOS/libs/mime/mime.iife.js");
+importScripts("/AnuraOS/libs/idb-keyval/idb-keyval.js");
+importScripts("/AnuraOS/libs/comlink/comlink.min.umd.js");
+importScripts("/AnuraOS/libs/workbox/workbox-v7.4.0/workbox-sw.js");
 
 workbox.setConfig({
 	debug: false,
-	modulePathPrefix: "/libs/workbox/workbox-v7.4.0",
+	modulePathPrefix: "/AnuraOS/libs/workbox/workbox-v7.4.0",
 });
 
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
-importScripts("/sw/consts.js", "/sw/messages.js", "/sw/fs.js");
+importScripts("/AnuraOS/sw/consts.js", "/AnuraOS/sw/messages.js", "/AnuraOS/sw/fs.js");
 importScripts(
-	"/sw/routes/fs.js",
-	"/sw/routes/display.js",
-	"/sw/routes/dav.js",
-	"/sw/routes/filepicker.js",
-	"/sw/routes/proxy.js",
-	"/sw/routes/main.js",
+	"/AnuraOS/sw/routes/fs.js",
+	"/AnuraOS/sw/routes/display.js",
+	"/AnuraOS/sw/routes/dav.js",
+	"/AnuraOS/sw/routes/filepicker.js",
+	"/AnuraOS/sw/routes/proxy.js",
+	"/AnuraOS/sw/routes/main.js",
 );
 
 (async () => {

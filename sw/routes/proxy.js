@@ -1,6 +1,6 @@
 /* global workbox, $scramjetController */
 
-importScripts("/browser/controller.sw.js");
+importScripts("/AnuraOS/browser/controller.sw.js");
 
 const methods = ["GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS", "PATCH"];
 for (const method of methods) {

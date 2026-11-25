@@ -64,7 +64,7 @@ async function handleAppView(
 	iframe.contentWindow.addEventListener("load", () => {
 		const matter = document.createElement("link");
 		matter.setAttribute("rel", "stylesheet");
-		matter.setAttribute("href", "/assets/matter.css");
+		matter.setAttribute("href", "/AnuraOS/assets/matter.css");
 		iframe.contentDocument.head.appendChild(matter);
 	});
 }
